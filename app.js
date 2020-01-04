@@ -1,6 +1,11 @@
 
+const elements = document.querySelectorAll("[app-lang]");
 
-let currentLanguage = "PL";
+let currentLanguage = localStorage.getItem('language');
+if (!currentLanguage) {
+    currentLanguage = "PL";
+}
+
 const texts = [
     {
         lang: "PL",
@@ -8,7 +13,8 @@ const texts = [
             firstName: "Imię",
             lastName: "Nazwisko",
             findGrave: "Znajdź grób",
-            home: "Indeks"
+            home: "Indeks",
+            buttonLanguage: "ENGLISH"
         }
     },
     {
@@ -17,7 +23,8 @@ const texts = [
             firstName: "Name",
             lastName: "Last Name",
             findGrave: "Find grave",
-            home: "Home"
+            home: "Home",
+            buttonLanguage: "POLSKI"
 
         }
     }
@@ -25,23 +32,19 @@ const texts = [
 
 
 
-$(document).ready(changeLanguage())
+$(document).ready(changeTranslations())
 //const texts = definedTexts;
 
 function changeLanguage() {
     currentLanguage = currentLanguage === "PL" ? "EN" : "PL";
-    const languageButton = document.querySelector("#language");
-    if (currentLanguage === "PL") {
-        languageButton.innerText = "ENGLISH";
-    } else {
-        languageButton.innerText = "POLSKI";
-    }
-
+    localStorage.setItem('language', currentLanguage);
     changeTranslations();
 }
 
+
+
 function changeTranslations() {
-    const elements = document.querySelectorAll("[app-lang]");
+
     let textId;
     elements.forEach(item => {
         textId = item.getAttribute("app-lang");
@@ -59,6 +62,10 @@ function changeTranslations() {
     });
 }
 
+
+function doSomething() {
+    console.log(window.navigator);
+}
 
 
 $('#menu-items').load('menu.html').then(() => {
