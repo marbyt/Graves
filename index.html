@@ -19,6 +19,7 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
+						<button type="button" id='language' onclick='changeLanguage()'></button>
 						<nav id="nav">
 							<ul>
 								<li class="special">
@@ -34,25 +35,7 @@
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
-							<h4>Find grave</h4>
-							<form method="post" action="#">
-								<div class="row gtr-uniform">
-									<div class="col-1 col-12-xsmall"></div>
-									<div class="col-5 col-12-xsmall">
-										<input type="text" name="first-name" id="first-name" value="" placeholder="First name" />
-									</div>
-									<div class="col-5 col-12-xsmall">
-										<input type="text" name="last-name" id="last-name" value="" placeholder="Last name" />
-									</div>
-									<div class="col-1 col-12-xsmall"></div>
-									<div class="col-12">
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</div>
-								</div>
-							</form>
+							<div id="search-graves"></div>
 						</div>
 					</section>
 
@@ -173,6 +156,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="partials.js"></script>
 			<script src="app.js"></script>
 
 	</body>
