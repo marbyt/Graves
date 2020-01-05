@@ -19,18 +19,16 @@
 
 				<!-- Header -->
 					<header id="header" class="alt">
-						<h1><a href="index.html">Spectral</a></h1>
+						<button type="button" id='language' onclick='changeLanguage()' app-lang="buttonLanguage"></button>
 						<nav id="nav">
 							<ul>
 								<li class="special">
 									<a href="#menu" class="menuToggle"><span>Menu</span></a>
 									<div id="menu">
 										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="generic.html">Generic</a></li>
-											<li><a href="elements.html">Elements</a></li>
-											<li><a href="#">Sign Up</a></li>
-											<li><a href="#">Log In</a></li>
+											<li><a href="index.html" app-lang="home"></a></li>
+											<li><a href="#two">Renovations guidline</a></li>
+											<li><a  onclick="doSomething()"> Contact inormation</button></a></li>
 										</ul>
 									</div>
 								</li>
@@ -41,15 +39,26 @@
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
-							<h2>Spectral</h2>
-							<p>Another fine responsive<br />
-							site template freebie<br />
-							crafted by <a href="http://html5up.net">HTML5 UP</a>.</p>
-							<ul class="actions special">
-								<li><a href="#" class="button primary">Activate</a></li>
-							</ul>
+							<h4 app-lang="findGrave"></h4>
+							<form method="post" action="#">
+								<div class="row gtr-uniform">
+									<div class="col-1 col-12-xsmall"></div>
+									<div class="col-5 col-12-xsmall">
+										<input type="text" name="first-name" id="first-name" value="" app-lang="firstName" />
+									</div>
+									<div class="col-5 col-12-xsmall">
+										<input type="text" name="last-name" id="last-name" value="" app-lang="lastName" />
+									</div>
+									<div class="col-1 col-12-xsmall"></div>
+									<div class="col-12">
+										<ul class="actions">
+											<li><button type="submit" class="primary">Send Message</button></li>
+											<li><button type="reset">Reset</button></li>
+										</ul>
+									</div>
+								</div>
+							</form>
 						</div>
-						<a href="#one" class="more scrolly">Learn More</a>
 					</section>
 
 				<!-- One -->
@@ -169,6 +178,8 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="partials.js"></script>
+			<script src="app.js"></script>
 
 	</body>
 </html>
