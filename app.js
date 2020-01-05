@@ -14,7 +14,8 @@ const texts = [
             lastName: "Nazwisko",
             findGrave: "Znajdź grób",
             home: "Indeks",
-            buttonLanguage: "ENGLISH"
+            buttonLanguage: "ENGLISH",
+            language:"Jezyk"
         }
     },
     {
@@ -24,7 +25,8 @@ const texts = [
             lastName: "Last Name",
             findGrave: "Find grave",
             home: "Home",
-            buttonLanguage: "POLSKI"
+            buttonLanguage: "POLSKI",
+            language:"Language"
 
         }
     }
