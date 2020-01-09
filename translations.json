@@ -1,0 +1,22 @@
+[{
+    "lang": "PL",
+    "translations": {
+        "firstName": "Imię",
+        "lastName": "Nazwisko",
+        "findGrave": "Znajdź grób",
+        "home": "Indeks",
+        "buttonLanguage": "ENGLISH",
+        "newThing":"Ab"
+    }
+},
+{
+    "lang": "EN",
+    "translations": {
+        "firstName": "Name",
+        "lastName": "Last Name",
+        "findGrave": "Find grave",
+        "home": "Home",
+        "buttonLanguage": "POLSKI"
+    }
+}
+]

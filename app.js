@@ -6,34 +6,19 @@ if (!currentLanguage) {
     currentLanguage = "PL";
 }
 
-const texts = [
-    {
-        lang: "PL",
-        translations: {
-            firstName: "Imię",
-            lastName: "Nazwisko",
-            findGrave: "Znajdź grób",
-            home: "Indeks",
-            buttonLanguage: "ENGLISH"
-        }
-    },
-    {
-        lang: "EN",
-        translations: {
-            firstName: "Name",
-            lastName: "Last Name",
-            findGrave: "Find grave",
-            home: "Home",
-            buttonLanguage: "POLSKI"
+const getTranslations = async () => {
+    const response = await fetch('translations.json');
+    const data = await response.json();
+    return data;
 
-        }
-    }
-];
+};
 
+let texts;
+getTranslations().then(data => {
+    texts = data;
+    changeTranslations();
 
-
-$(document).ready(changeTranslations())
-//const texts = definedTexts;
+});
 
 function changeLanguage() {
     currentLanguage = currentLanguage === "PL" ? "EN" : "PL";
@@ -41,14 +26,11 @@ function changeLanguage() {
     changeTranslations();
 }
 
-
-
 function changeTranslations() {
 
     let textId;
     elements.forEach(item => {
         textId = item.getAttribute("app-lang");
-        //  console.log(texts.find(lang => lang.lang === currentLanguage).translations);
         const text = texts.find(
             lang => lang.lang === currentLanguage
         ).translations[textId];
@@ -66,13 +48,3 @@ function changeTranslations() {
 function doSomething() {
     console.log(window.navigator);
 }
-
-
-$('#menu-items').load('menu.html').then(() => {
-    changeLanguage();
-});
-$('#search-graves').load('search-graves.html').then(() => {
-    changeLanguage();
-});
-
-
