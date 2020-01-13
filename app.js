@@ -7,7 +7,7 @@ if (!currentLanguage) {
 }
 
 const getTranslations = async () => {
-    const response = await fetch('translations.json');
+    const response = await fetch('/data/translations.json');
     const data = await response.json();
     return data;
 
@@ -17,7 +17,6 @@ let texts;
 getTranslations().then(data => {
     texts = data;
     changeTranslations();
-
 });
 
 function changeLanguage() {
@@ -44,6 +43,10 @@ function changeTranslations() {
     });
 }
 
+const showSearch = () =>{
+    window.location.hash = "banner";
+    document.getElementById("banner").focus();
+}
 
 function doSomething() {
     console.log(window.navigator);
