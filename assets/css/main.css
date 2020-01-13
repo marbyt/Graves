@@ -2183,12 +2183,14 @@ input, select, textarea {
 		display: flex;
 		cursor: default;
 		list-style: none;
-		margin-left: -1em;
+		margin-left: -2em;
 		padding-left: 0;
+		justify-content: center;
+	
 	}
 
 		ul.actions li {
-			padding: 0 0 0 1em;
+			padding: 0 0 0 2em;
 			vertical-align: middle;
 		}
 
@@ -2360,7 +2362,7 @@ input, select, textarea {
 			font-size: 0.9em;
 			font-weight: 600;
 			padding: 0 0.75em 0.75em 0.75em;
-			text-align: left;
+			text-align: center;
 		}
 
 		table thead {
@@ -4021,6 +4023,11 @@ input, select, textarea {
 		padding: 5px 5px; */
 ;
 	}
+
+
+	#results{
+		display:none;
+	}
 	/* #goToSearch {
 		background-image: url(images/magnifier.png);
 		position: fixed;
@@ -4066,3 +4073,57 @@ input, select, textarea {
 		}
 
 	} */
+	/* table{
+		border-collapse:collapse;
+		width:100%;
+	  }
+	  
+	  .blue{
+		border:2px solid #1ABC9C;
+	  }
+	  
+	  .blue thead{
+		background:#1ABC9C;
+	  }
+	  
+	  .purple{
+		border:2px solid #9B59B6;
+	  }
+	  
+	  .purple thead{
+		background:#9B59B6;
+	  }
+	  
+	  thead{
+		color:white;
+	  }
+	  
+	  th,td{
+		text-align:center;
+		padding:5px 0;
+	  }
+	  
+	  tbody tr:nth-child(even){
+		background:#ECF0F1;
+	  }
+	  
+	  tbody tr:hover{
+	  background:#BDC3C7;
+		color:#FFFFFF;
+	  }
+	  
+	  .fixed{
+		top:0;
+		position:fixed;
+		width:auto;
+		display:none;
+		border:none;
+	  }
+	  
+	  .scrollMore{
+		margin-top:600px;
+	  }
+	  
+	  .up{
+		cursor:pointer;
+	  } */

@@ -1,5 +1,10 @@
 
 const elements = document.querySelectorAll("[app-lang]");
+const graveForm = document.querySelector('.grave-form');
+
+const results = document.querySelector('#results');
+results.setAttribute('style','display:none');
+
 
 let currentLanguage = localStorage.getItem('language');
 if (!currentLanguage) {
@@ -43,11 +48,14 @@ function changeTranslations() {
     });
 }
 
-const showSearch = () =>{
-    window.location.hash = "banner";
-    document.getElementById("banner").focus();
-}
 
-function doSomething() {
-    console.log(window.navigator);
-}
+graveForm.addEventListener('submit', e => {
+    e.preventDefault();
+    results.setAttribute('style','display:block');
+});
+
+
+graveForm.addEventListener('reset', e => {
+    e.preventDefault();
+    results.setAttribute('style','display:none');
+});

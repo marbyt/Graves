@@ -20,7 +20,7 @@
 	<!-- Page Wrapper -->
 	<div id="page-wrapper">
 		<!-- Header -->
-		<header id="header" class="alt" >
+		<header id="header" class="alt">
 			<button type="button" id='language' onclick='changeLanguage()' app-lang="buttonLanguage"></button>
 			<a href="#findGrave" id='goToSearch' class="button">Find grave</a>
 			<nav id="nav">
@@ -33,7 +33,7 @@
 								<li><a href="#findGrave">Find grave</a></li>
 								<li><a href="#history">History of the cemetery</a></li>
 								<li><a href="#contact">Contact</a></li>
-							
+
 							</ul>
 						</div>
 					</li>
@@ -43,48 +43,233 @@
 
 		<!-- Banner -->
 		<section id="banner">
-			<div class="inner" >
+			<div class="inner">
 				Witaj na stronie cmentarza w Będzinie
 			</div>
 		</section>
 
 		<section id="findGrave" class="wrapper style2 special">
-			<div class="inner">	<h4 app-lang="findGrave"></h4>
-				<form method="post" class="grave-form">
+			<div class="inner">
+				<h4 app-lang="findGrave"></h4>
+				<form class="grave-form">
 					<div class="row gtr-uniform">
-					
+
 						<div class="col-6 col-12-xsmall">
 							<input type="text" name="first-name" id="first-name" value="" app-lang="firstName" />
 						</div>
 						<div class="col-6 col-12-xsmall">
 							<input type="text" name="last-name" id="last-name" value="" app-lang="lastName" />
 						</div>
-						<div class="container">
-							<div class="row">
-								<div class='col-sm-6'>
-									<div class="form-group">
-										<div class='input-group date' id='datetimepicker1'>
-											<input type='text' class="form-control" />
-											<span class="input-group-addon">
-												<span class="glyphicon glyphicon-calendar"></span>
-											</span>
-										</div>
-									</div>
-								</div>
-							
-							</div>
+
+						<div class="col-6 col-12-xsmall">
+							<input type="text" name="first-name" id="death-year-from" value=""
+								app-lang="deathYearFrom" />
 						</div>
+						<div class="col-6 col-12-xmedium">
+							<input type="text" name="last-name" id="death-year-to" value="" app-lang="deathYearTo" />
+						</div>
+						
 
-
-			
 						<div class="col-12">
 							<ul class="actions">
-								<li><button type="submit" class="primary">Search</button></li>
+								<li><button type="submit" class="button primary fit">Search</button></li>
 								<li><button type="reset">Reset</button></li>
 							</ul>
 						</div>
 					</div>
-				</form></div>
+				</form>
+			</div>
+		</section>
+			<section id="results" class="wrapper style5 special">
+			<h4>Results</h4>
+				<div class="table-wrapper">
+			
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Description</th>
+								<th>Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Item One</td>
+								<td>Item One</td>
+								<td>Ante turpis integer aliquet porttitor.</td>
+								<td>29.99</td>
+							</tr>
+							<tr>
+								<td>Item Two</td>
+								<td>Item One</td>
+								<td>Vis ac commodo adipiscing arcu aliquet.</td>
+								<td>19.99</td>
+							</tr>
+							<tr>
+								<td>Item Three</td>
+								<td>Item One</td>
+								<td> Morbi faucibus arcu accumsan lorem.</td>
+								<td>29.99</td>
+							</tr>
+							<tr>
+								<td>Item Four</td>
+								<td>Item One</td>
+								<td>Vitae integer tempus condimentum.</td>
+								<td>19.99</td>
+							</tr>
+							<tr>
+								<td>Item Five</td>
+								<td>Item One</td>
+								<td>Ante turpis integer aliquet porttitor.</td>
+								<td>29.99</td>
+							</tr>
+						</tbody>
+						<!-- <tfoot>
+							<tr>
+								<td colspan="2"></td>
+								<td>100.00</td>
+							</tr>
+						</tfoot> -->
+					</table>
+				</div>
+			</section>
+
+			<!-- <div class="limiter">
+				<div class="container-table100">
+					<div class="wrap-table100">
+						<div class="table">
+							<div class="row header">
+								<div class="cell">
+									Full Name
+								</div>
+								<div class="cell">
+									Age
+								</div>
+								<div class="cell">
+									Job Title
+								</div>
+								<div class="cell">
+									Location
+								</div>
+							</div>
+							<div class="row">
+								<div class="cell" data-title="Full Name">
+									Vincent Williamson
+								</div>
+								<div class="cell" data-title="Age">
+									31
+								</div>
+								<div class="cell" data-title="Job Title">
+									iOS Developer
+								</div>
+								<div class="cell" data-title="Location">
+									Washington
+								</div>
+							</div>
+							<div class="row">
+								<div class="cell" data-title="Full Name">
+									Joseph Smith
+								</div>
+								<div class="cell" data-title="Age">
+									27
+								</div>
+								<div class="cell" data-title="Job Title">
+									Project Manager
+								</div>
+								<div class="cell" data-title="Location">
+									Somerville, MA
+								</div>
+							</div>
+							<div class="row">
+								<div class="cell" data-title="Full Name">
+									Justin Black
+								</div>
+								<div class="cell" data-title="Age">
+									26
+								</div>
+								<div class="cell" data-title="Job Title">
+									Front-End Developer
+								</div>
+								<div class="cell" data-title="Location">
+									Los Angeles
+								</div>
+							</div>
+							<div class="row">
+								<div class="cell" data-title="Full Name">
+									Sean Guzman
+								</div>
+								<div class="cell" data-title="Age">
+									25
+								</div>
+								<div class="cell" data-title="Job Title">
+									Web Designer
+								</div>
+								<div class="cell" data-title="Location">
+									San Francisco
+								</div>
+							</div>
+							<div class="row">
+								<div class="cell" data-title="Full Name">
+									Keith Carter
+								</div>
+								<div class="cell" data-title="Age">
+									20
+								</div>
+								<div class="cell" data-title="Job Title">
+									Graphic Designer
+								</div>
+								<div class="cell" data-title="Location">
+									New York, NY
+								</div>
+							</div>
+							<div class="row">
+								<div class="cell" data-title="Full Name">
+									Austin Medina
+								</div>
+								<div class="cell" data-title="Age">
+									32
+								</div>
+								<div class="cell" data-title="Job Title">
+									Photographer
+								</div>
+								<div class="cell" data-title="Location">
+									New York
+								</div>
+							</div>
+							<div class="row">
+								<div class="cell" data-title="Full Name">
+									Vincent Williamson
+								</div>
+								<div class="cell" data-title="Age">
+									31
+								</div>
+								<div class="cell" data-title="Job Title">
+									iOS Developer
+								</div>
+								<div class="cell" data-title="Location">
+									Washington
+								</div>
+							</div>
+							<div class="row">
+								<div class="cell" data-title="Full Name">
+									Joseph Smith
+								</div>
+								<div class="cell" data-title="Age">
+									27
+								</div>
+								<div class="cell" data-title="Job Title">
+									Project Manager
+								</div>
+								<div class="cell" data-title="Location">
+									Somerville, MA
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+
 		</section>
 
 		<!-- Two -->
@@ -95,8 +280,9 @@
 				<div class="content">
 					<h2>Magna primis lobortis<br />
 						sed ullamcorper</h2>
-					<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.	</p>
-				
+					<p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit imperdiet. Mauris eleifend fringilla
+						nullam aenean mi ligula. </p>
+
 				</div>
 			</section>
 			<section class="spotlight">
@@ -157,7 +343,7 @@
 	<script src="assets/js/main.js"></script>
 	<script src="partials.js"></script>
 	<script src="app.js"></script>
-	
+
 
 </body>
 

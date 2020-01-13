@@ -6,7 +6,9 @@
         "findGrave": "Znajdź grób",
         "home": "Indeks",
         "buttonLanguage": "ENGLISH",
-        "newThing":"Ab"
+        "newThing":"Ab",
+        "deathYearFrom": "Rok śmierci od",
+        "deathYearTo":"Rok śmierci do"
     }
 },
 {
@@ -16,7 +18,9 @@
         "lastName": "Last Name",
         "findGrave": "Find grave",
         "home": "Home",
-        "buttonLanguage": "POLSKI"
+        "buttonLanguage": "POLSKI",
+        "deathYearFrom": "Death year from",
+        "deathYearTo":"Death year to"
     }
 }
 ]
