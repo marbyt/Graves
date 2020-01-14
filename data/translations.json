@@ -1,26 +1,37 @@
-[{
-    "lang": "PL",
-    "translations": {
-        "firstName": "Imię",
-        "lastName": "Nazwisko",
-        "findGrave": "Znajdź grób",
-        "home": "Indeks",
-        "buttonLanguage": "ENGLISH",
-        "newThing":"Ab",
-        "deathYearFrom": "Rok śmierci od",
-        "deathYearTo":"Rok śmierci do"
+[
+    {
+        "lang": "PL",
+        "translations": {
+            "firstName": "Imię",
+            "lastName": "Nazwisko",
+            "findGrave": "Znajdź grób",
+            "home": "Home",
+            "buttonLanguage": "ENGLISH",
+            "newThing": "Ab",
+            "deathYearFrom": "Rok śmierci od",
+            "deathYearTo": "Rok śmierci do",
+            "names": "Imiona",
+            "dateOfDeath": "Data śmierci",
+            "age": "Wiek",
+            "historyCemetery":"Historia cmentarza",
+            "contact":"Kontakt"
+        }
+    },
+    {
+        "lang": "EN",
+        "translations": {
+            "firstName": "Name",
+            "lastName": "Last Name",
+            "findGrave": "Find grave",
+            "home": "Home",
+            "buttonLanguage": "POLSKI",
+            "deathYearFrom": "Death year from",
+            "deathYearTo": "Death year to",
+            "names": "Names",
+            "dateOfDeath": "Date of death",
+            "age": "Age",
+            "historyCemetery":"History of the cemetery",
+            "contact":"Contact"
+        }
     }
-},
-{
-    "lang": "EN",
-    "translations": {
-        "firstName": "Name",
-        "lastName": "Last Name",
-        "findGrave": "Find grave",
-        "home": "Home",
-        "buttonLanguage": "POLSKI",
-        "deathYearFrom": "Death year from",
-        "deathYearTo":"Death year to"
-    }
-}
 ]

@@ -30,9 +30,9 @@
 						<div id="menu">
 							<ul>
 								<li><a href="#banner" app-lang="home"></a></li>
-								<li><a href="#findGrave">Find grave</a></li>
-								<li><a href="#history">History of the cemetery</a></li>
-								<li><a href="#contact">Contact</a></li>
+								<li><a href="#findGrave" app-lang="findGrave"></a></li>
+								<li><a href="#history" app-lang="historyCemetery"></a></li>
+								<li><a href="#contact" app-lang="contact"></a></li>
 
 							</ul>
 						</div>
@@ -55,87 +55,58 @@
 					<div class="row gtr-uniform">
 
 						<div class="col-6 col-12-xsmall">
-							<input type="text" name="first-name" id="first-name" value="" app-lang="firstName" />
+							<input type="text" name="firstName" id="first-name" value="" app-lang="firstName"/>
 						</div>
 						<div class="col-6 col-12-xsmall">
-							<input type="text" name="last-name" id="last-name" value="" app-lang="lastName" />
+							<input type="text" name="lastName" id="last-name" value="" app-lang="lastName" />
 						</div>
 
 						<div class="col-6 col-12-xsmall">
-							<input type="text" name="first-name" id="death-year-from" value=""
+							<input type="text" name="deathYearFrom" id="death-year-from" value=""
 								app-lang="deathYearFrom" />
 						</div>
 						<div class="col-6 col-12-xmedium">
-							<input type="text" name="last-name" id="death-year-to" value="" app-lang="deathYearTo" />
+							<input type="text" name="deathYearTo" id="death-year-to" value="" app-lang="deathYearTo" />
 						</div>
-						
+
 
 						<div class="col-12">
 							<ul class="actions">
-								<li><button type="submit" class="button primary fit">Search</button></li>
-								<li><button type="reset">Reset</button></li>
+								<li><button type="submit" class="button primary fit" name="submitButton" disabled>Search</button></li>
+								<li><button type="reset" >Reset</button></li>
 							</ul>
 						</div>
 					</div>
 				</form>
 			</div>
 		</section>
-			<section id="results" class="wrapper style5 special">
+		<section id="results" class="wrapper style5 special">
 			<h4>Results</h4>
-				<div class="table-wrapper">
-			
-					<table>
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Description</th>
-								<th>Description</th>
-								<th>Price</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Item One</td>
-								<td>Item One</td>
-								<td>Ante turpis integer aliquet porttitor.</td>
-								<td>29.99</td>
-							</tr>
-							<tr>
-								<td>Item Two</td>
-								<td>Item One</td>
-								<td>Vis ac commodo adipiscing arcu aliquet.</td>
-								<td>19.99</td>
-							</tr>
-							<tr>
-								<td>Item Three</td>
-								<td>Item One</td>
-								<td> Morbi faucibus arcu accumsan lorem.</td>
-								<td>29.99</td>
-							</tr>
-							<tr>
-								<td>Item Four</td>
-								<td>Item One</td>
-								<td>Vitae integer tempus condimentum.</td>
-								<td>19.99</td>
-							</tr>
-							<tr>
-								<td>Item Five</td>
-								<td>Item One</td>
-								<td>Ante turpis integer aliquet porttitor.</td>
-								<td>29.99</td>
-							</tr>
-						</tbody>
-						<!-- <tfoot>
+			<div class="table-wrapper">
+
+				<table>
+					<thead>
+						<tr>
+							<th app-lang="lastName"></th>
+							<th app-lang="names"></th>
+							<th app-lang="dateOfDeath"></th>
+							<th app-lang="age"></th>
+						</tr>
+					</thead>
+					<tbody id="graveRows">
+						
+					</tbody>
+					<!-- <tfoot>
 							<tr>
 								<td colspan="2"></td>
 								<td>100.00</td>
 							</tr>
 						</tfoot> -->
-					</table>
-				</div>
-			</section>
+				</table>
+			</div>
+		</section>
 
-			<!-- <div class="limiter">
+		<!-- <div class="limiter">
 				<div class="container-table100">
 					<div class="wrap-table100">
 						<div class="table">
@@ -312,6 +283,10 @@
 				<header>
 					<h2>Arcue ut vel commodo</h2>
 					<p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
+
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2547.716053211161!2d19.135494715759705!3d50.31589080493245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716d1ecc3a75f5b%3A0xb31dd99d0151dfe8!2sCmentarz%20%C5%BCydowski%20w%20B%C4%99dzinie%20przy%20ul.%20Sieleckiej!5e0!3m2!1spl!2spl!4v1578952076108!5m2!1spl!2spl"
+						width="400" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 				</header>
 			</div>
 		</section>
