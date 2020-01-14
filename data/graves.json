@@ -1,0 +1,26 @@
+[
+    {
+        "lastName": "Last Name",
+        "names": "Names",
+        "dateOfDeath": "2011",
+        "age": "80"
+    },
+    {
+        "lastName": "Smith",
+        "names": "John",
+        "dateOfDeath": "2010",
+        "age": "42"
+    },
+    {
+        "lastName": "Sok",
+        "names": "Franciszek",
+        "dateOfDeath": "1999",
+        "age": "60"
+    },
+    {
+        "lastName": "Kowalski",
+        "names": "Jan",
+        "dateOfDeath": "2018",
+        "age": "40"
+    }
+]
