@@ -1,7 +1,7 @@
 [
     {
-        "lastName": "Last Name",
-        "names": "Names",
+        "lastName": "Nowak",
+        "names": "Zdzislaw",
         "dateOfDeath": "2011",
         "age": "80"
     },
@@ -20,7 +20,7 @@
     {
         "lastName": "Kowalski",
         "names": "Jan",
-        "dateOfDeath": "2018",
-        "age": "40"
+        "dateOfDeath": "2018"
+      
     }
 ]
