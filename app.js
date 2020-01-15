@@ -84,7 +84,7 @@ graveForm.addEventListener('submit', e => {
     results.setAttribute('style', 'display:block');
 });
 
-const isFormEmpty=()=>{
+const isFormEmpty = () => {
     const disabled = !Array.from(graveForm.elements).filter(x => x.type === 'text').some(x => x.value);
     return disabled;
 }
@@ -99,9 +99,28 @@ graveForm.addEventListener('reset', e => {
     graveForm.submitButton.disabled = true;
     graveRows.innerHTML = '';
     results.setAttribute('style', 'display:none');
-   
+
 });
 
+
+graveRows.addEventListener('click', e => {
+    const currentRow = e.target.parentElement;
+    const detailRow = document.querySelector('.details');
+    if (detailRow) {
+        detailRow.classList.remove('details');
+        detailRow.parentNode.removeChild(detailRow.nextElementSibling);
+    }
+    if (!currentRow.classList.contains('details')) {
+        currentRow.classList.add('details');
+        currentRow.insertAdjacentHTML('afterend', "<tr><td colspan='4'>adfadfadsfdaesfdasf</td></tr>")
+    }
+    // let details = document.createElement("tr");
+    //details.innerHTML+="<div> jest ejst jest </div>";
+
+    //graveRows.insertBefore(e.target.parentElement.nextElementSibling, details);
+
+
+})
 
 
 //Array.from(graveForm.elements).filter(x=>x.type==='text').foreach
