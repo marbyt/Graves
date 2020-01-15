@@ -2349,9 +2349,9 @@ input, select, textarea {
 			border-right: 0;
 		}
 
-			table tbody tr:nth-child(2n + 1) {
+			/* table tbody tr:nth-child(2n + 1) {
 				background-color: rgba(144, 144, 144, 0.25);
-			}
+			} */
 
 		table td {
 			padding: 0.75em 0.75em;
@@ -3250,9 +3250,9 @@ input, select, textarea {
 				border-color: #dfdfdf;
 			}
 
-				.wrapper.style5 table tbody tr:nth-child(2n + 1) {
+				/* .wrapper.style5 table tbody tr:nth-child(2n + 1) {
 					background-color: rgba(0, 0, 0, 0.0375);
-				}
+				} */
 
 			.wrapper.style5 table th {
 				color: #2E3842;
@@ -4127,3 +4127,17 @@ input, select, textarea {
 	  .up{
 		cursor:pointer;
 	  } */
+
+
+	  .graveCard{
+		  background:green;
+		  width: 100%;
+	  }
+tbody tr{
+	cursor:pointer;
+}
+tbody tr:hover{
+	background: grey;
+	
+	
+}
