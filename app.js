@@ -76,7 +76,7 @@ graveForm.addEventListener('submit', e => {
         if (filteredGraves) {
             graveRows.innerHTML = '';
             filteredGraves.forEach(grave => {
-                const row = `<tr><td>${grave.lastName}</td><td>${grave.names}</td><td>${grave.dateOfDeath}</td><td>${grave.age}</td><td>${grave.names}</td></tr>`;
+                const row = `<tr class='graveRow'><td>${grave.lastName}</td><td>${grave.names}</td><td>${grave.dateOfDeath}</td><td>${grave.age}</td><td>${grave.names}</td></tr>`;
                 graveRows.innerHTML += row;
             });
         };
@@ -104,22 +104,32 @@ graveForm.addEventListener('reset', e => {
 
 
 graveRows.addEventListener('click', e => {
-    const currentRow = e.target.parentElement;
-    const detailRow = document.querySelector('.details');
-    if (detailRow) {
-        detailRow.classList.remove('details');
-        detailRow.parentNode.removeChild(detailRow.nextElementSibling);
-    }
-    if (!currentRow.classList.contains('details')) {
-        currentRow.classList.add('details');
-        currentRow.insertAdjacentHTML('afterend', `<tr><td colspan="4"><div id="contact" class="graveCard">
-        <div class="inner">
-           
-                <h2>Arcue ut vel commodo</h2>
-                <p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
-      
-        </div>
-    </div></td></tr>`)
+    if (e.target.tagName === 'TD') {
+        const currentRow = e.target.parentElement;
+
+        if (currentRow.classList.contains('details')) {
+            currentRow.classList.remove('details');
+            currentRow.parentNode.removeChild(currentRow.nextElementSibling);
+
+        } else {
+
+            if (!currentRow.classList.contains('details') && !currentRow.classList.contains('graveCardRow')) {
+                const detailRow = document.querySelector('.details');
+                if (detailRow) {
+                    detailRow.classList.remove('details');
+                    detailRow.parentNode.removeChild(detailRow.nextElementSibling);
+                }
+                currentRow.classList.add('details');
+                currentRow.insertAdjacentHTML('afterend',
+                    `<tr class="graveCardRow">
+                <td colspan="5">
+                        <h2>Arcue ut vel commodo</h2>
+                        <p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
+                </td>
+            </tr>`);
+
+            }
+        }
     }
     // let details = document.createElement("tr");
     //details.innerHTML+="<div> jest ejst jest </div>";
@@ -127,7 +137,7 @@ graveRows.addEventListener('click', e => {
     //graveRows.insertBefore(e.target.parentElement.nextElementSibling, details);
 
 
-})
+});
 
 
 //Array.from(graveForm.elements).filter(x=>x.type==='text').foreach
