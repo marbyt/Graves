@@ -4136,8 +4136,29 @@ input, select, textarea {
 tbody tr{
 	cursor:pointer;
 }
-tbody tr:hover{
-	background: grey;
-	
-	
+tbody tr.graveRow:hover{
+	background: lightgrey;
+		
 }
+tbody tr.graveRow.details{
+	background: #2e3842;
+	border-color: #2e3842;
+	color: #fff;
+
+}
+
+
+tbody tr.graveRow.details:hover{
+	background: #2e3842;
+	border-color: #2e3842;
+	color: #fff;
+
+}
+
+.graveCardRow{
+	background: lightgreen;
+	border-top-style: none;
+}
+
+
+
