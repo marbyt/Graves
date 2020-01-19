@@ -68,7 +68,14 @@ graveForm.addEventListener('submit', e => {
     let filteredGraves;
     if (graves) {
         filteredGraves = graves.filter(grave => {
-            const result = grave.lastName.toLowerCase().includes(graveForm.lastName.value.toLowerCase()) && grave.names.toLowerCase().includes(graveForm.firstName.value.toLowerCase());
+            if (!grave.Surname) {
+                grave.Surname = '';
+            }
+            if (!grave.Givenname) {
+                grave.Givenname = '';
+            }
+
+            const result = grave.Surname.toLowerCase().includes(graveForm.lastName.value.toLowerCase()) && grave.Givenname.toLowerCase().includes(graveForm.firstName.value.toLowerCase());
             return result;
 
         });
@@ -76,7 +83,7 @@ graveForm.addEventListener('submit', e => {
         if (filteredGraves) {
             graveRows.innerHTML = '';
             filteredGraves.forEach(grave => {
-                const row = `<tr class='graveRow'><td>${grave.lastName}</td><td>${grave.names}</td><td>${grave.dateOfDeath}</td><td>${grave.age}</td><td>${grave.names}</td></tr>`;
+                const row = `<tr class='graveRow'><td>${grave.Surname}</td><td>${grave.Givenname}</td><td>${grave.DateDied}</td><td>${grave.age}</td></tr>`;
                 graveRows.innerHTML += row;
             });
         };
