@@ -1,4 +1,3 @@
-
 const elements = document.querySelectorAll("[app-lang]");
 const graveForm = document.querySelector('.grave-form');
 const graveRows = document.querySelector('#graveRows');
@@ -79,11 +78,7 @@ function changeTranslations() {
     setGravesNumberText(lastNumberFound);
 }
 
-
-
-
 const searchHandler = () => {
-
     let filteredGraves;
     if (graves) {
         filteredGraves = graves.filter(grave => {
@@ -94,9 +89,8 @@ const searchHandler = () => {
                 grave.Givenname = '';
             }
 
-            const result = grave.Surname.toLowerCase().indexOf(graveForm.lastName.value.toLowerCase()) > -1 && grave.Givenname.toLowerCase().indexOf(graveForm.firstName.value.toLowerCase() > -1);
+            const result = grave.Surname.toLowerCase().indexOf(graveForm.lastName.value.toLowerCase()) > -1 && grave.Givenname.toLowerCase().indexOf(graveForm.firstName.value.toLowerCase()) > -1;
             return result;
-
         });
 
         if (filteredGraves) {
