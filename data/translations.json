@@ -14,7 +14,8 @@
             "dateOfDeath": "Data śmierci",
             "age": "Wiek",
             "historyCemetery":"Historia cmentarza",
-            "contact":"Kontakt"
+            "contact":"Kontakt",
+            "gravesFound":"Znaleziono {0} grobów"
         }
     },
     {
@@ -31,7 +32,8 @@
             "dateOfDeath": "Date of death",
             "age": "Age",
             "historyCemetery":"History of the cemetery",
-            "contact":"Contact"
+            "contact":"Contact",
+            "gravesFound":"{0} graves found"
         }
     }
 ]
