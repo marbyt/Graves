@@ -122,7 +122,6 @@ graveForm.addEventListener('submit', e => {
     graveForm.submitButton.disabled = true;
     searchHandler();
 
-
 });
 
 const isFormEmpty = () => {
@@ -133,7 +132,13 @@ const isFormEmpty = () => {
 
 graveForm.addEventListener('keyup', e => {
     graveForm.submitButton.disabled = isFormEmpty();
+});
 
+graveForm.addEventListener('paste', e => {
+    let paste = (e.clipboardData || window.clipboardData).getData('text');
+    if(paste){
+        graveForm.submitButton.disabled =false;
+    }
 });
 
 graveForm.addEventListener('reset', e => {
