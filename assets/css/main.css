@@ -4010,6 +4010,8 @@ input, select, textarea {
 		background-color: #1d242a;
 	}
 
+	/*App styles*/
+
 	html{
 		scroll-behavior: smooth;
 	}
@@ -4131,7 +4133,7 @@ input, select, textarea {
 
 
 	  .graveCard{
-		  background:green;
+		  background:#21b2a6;
 		  width: 100%;
 	  }
 tbody tr{
@@ -4157,9 +4159,12 @@ tbody tr.graveRow.details:hover{
 }
 
 .graveCardRow{
-	background: lightgreen;
+	background: #21b2a6;
 	border-top-style: none;
 }
 
-
-
+@media screen and (max-width: 736px) {
+	.bigscreen{
+		display: none;
+	}
+}

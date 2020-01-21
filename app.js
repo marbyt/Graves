@@ -21,14 +21,14 @@ const setGravesNumberText = number => {
 }
 
 const getTranslations = async () => {
-    const response = await fetch('/data/translations.json');
+    const response = await fetch('./data/translations.json');
     const data = await response.json();
     return data;
 
 };
 
 const getGraves = async () => {
-    const response = await fetch('/data/graves.json');
+    const response = await fetch('./data/graves.json');
     const data = await response.json();
     return data;
 };
@@ -97,7 +97,11 @@ const searchHandler = () => {
             graveRows.innerHTML = '';
             let innerHTML = '';
             filteredGraves.forEach(grave => {
-                const row = `<tr class='graveRow'><td>${grave.Surname}</td><td>${grave.Givenname}</td><td>${grave.DateDied}</td><td>${grave.age}</td></tr>`;
+                const row = `<tr class='graveRow'>
+                                <td>${grave.Surname ? grave.Surname : ''}</td>
+                                <td>${grave.Givenname ? grave.Givenname : ''}</td>
+                                <td>${grave.DateDied ? grave.DateDied : ''}</td>
+                                <td class="bigscreen">${grave.age ? grave.age : ''}</td></tr>`;
                 innerHTML += row;
             });
             graveRows.innerHTML = innerHTML;
@@ -118,7 +122,6 @@ graveForm.addEventListener('submit', e => {
     graveForm.submitButton.disabled = true;
     searchHandler();
 
-
 });
 
 const isFormEmpty = () => {
@@ -129,7 +132,13 @@ const isFormEmpty = () => {
 
 graveForm.addEventListener('keyup', e => {
     graveForm.submitButton.disabled = isFormEmpty();
+});
 
+graveForm.addEventListener('paste', e => {
+    let paste = (e.clipboardData || window.clipboardData).getData('text');
+    if(paste){
+        graveForm.submitButton.disabled =false;
+    }
 });
 
 graveForm.addEventListener('reset', e => {
