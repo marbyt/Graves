@@ -101,7 +101,7 @@ const searchHandler = () => {
                                 <td>${grave.Surname ? grave.Surname : ''}</td>
                                 <td>${grave.Givenname ? grave.Givenname : ''}</td>
                                 <td>${grave.DateDied ? grave.DateDied : ''}</td>
-                                <td>${grave.age ? grave.age : ''}</td></tr>`;
+                                <td class="bigscreen">${grave.age ? grave.age : ''}</td></tr>`;
                 innerHTML += row;
             });
             graveRows.innerHTML = innerHTML;
