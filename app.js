@@ -21,14 +21,14 @@ const setGravesNumberText = number => {
 }
 
 const getTranslations = async () => {
-    const response = await fetch('/data/translations.json');
+    const response = await fetch('./data/translations.json');
     const data = await response.json();
     return data;
 
 };
 
 const getGraves = async () => {
-    const response = await fetch('/data/graves.json');
+    const response = await fetch('./data/graves.json');
     const data = await response.json();
     return data;
 };
@@ -97,7 +97,11 @@ const searchHandler = () => {
             graveRows.innerHTML = '';
             let innerHTML = '';
             filteredGraves.forEach(grave => {
-                const row = `<tr class='graveRow'><td>${grave.Surname}</td><td>${grave.Givenname}</td><td>${grave.DateDied}</td><td>${grave.age}</td></tr>`;
+                const row = `<tr class='graveRow'>
+                                <td>${grave.Surname ? grave.Surname : ''}</td>
+                                <td>${grave.Givenname ? grave.Givenname : ''}</td>
+                                <td>${grave.DateDied ? grave.DateDied : ''}</td>
+                                <td>${grave.age ? grave.age : ''}</td></tr>`;
                 innerHTML += row;
             });
             graveRows.innerHTML = innerHTML;
