@@ -168,9 +168,11 @@ graveRows.addEventListener('click', e => {
                 currentRow.classList.add('details');
                 currentRow.insertAdjacentHTML('afterend',
                     `<tr class="graveCardRow">
-                        <td colspan="5">
-                        <h2 class="naglowek">Arcue ut vel commodo</h2>
-                        <p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
+                        <td colspan="4">
+                        <div class="flexWraper">
+                        <img src='https://jri-poland.org/imagedata/JRI-IMG/BEDZIN-CZELADZ/dscn1737.jpg' class='cardPicture'>
+                        <div class="cardInformation"><p>adsfdaf daf adf dasf adsf dsaf</p> </div>
+                        </div>
                     </td>
                     </tr>`);
 

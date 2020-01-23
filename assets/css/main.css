@@ -4143,16 +4143,16 @@ tbody tr.graveRow:hover{
 		
 }
 tbody tr.graveRow.details{
-	background: #2e3842;
-	border-color: #2e3842;
+	background: #21b2a6;
+	border-color: #21b2a6;
 	color: #fff;
 
 }
 
 
 tbody tr.graveRow.details:hover{
-	background: #2e3842;
-	border-color: #2e3842;
+	background: #21b2a6;
+	border-color: #21b2a6;
 	color: #fff;
 
 }
@@ -4166,4 +4166,26 @@ tbody tr.graveRow.details:hover{
 	.bigscreen{
 		display: none;
 	}
+}
+
+
+
+.flexWraper{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	text-align: center;
+	align-items: center;
+	
+}
+.cardPicture{
+	max-width: 65%;
+	height: auto;
+}
+
+.cardInformation{
+	min-width: 35%;
 }
