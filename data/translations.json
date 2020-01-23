@@ -6,7 +6,7 @@
             "lastName": "Nazwisko",
             "findGrave": "Znajdź grób",
             "home": "Home",
-            "buttonLanguage": "ENGLISH",
+            "buttonLanguage": "EN",
             "newThing": "Ab",
             "deathYearFrom": "Rok śmierci od",
             "deathYearTo": "Rok śmierci do",
@@ -15,7 +15,11 @@
             "age": "Wiek",
             "historyCemetery":"Historia cmentarza",
             "contact":"Kontakt",
-            "gravesFound":"Znaleziono {0} grobów"
+            "gravesFound":"Znaleziono {0} grobów",
+            "welcomeMessage":"Witamy na stronie cmentarza w Czeladzi",
+            "search":"Szukaj",
+            "reset":"Wyczyść"
+          
         }
     },
     {
@@ -25,7 +29,7 @@
             "lastName": "Last Name",
             "findGrave": "Find grave",
             "home": "Home",
-            "buttonLanguage": "POLSKI",
+            "buttonLanguage": "PL",
             "deathYearFrom": "Death year from",
             "deathYearTo": "Death year to",
             "names": "Names",
@@ -33,7 +37,11 @@
             "age": "Age",
             "historyCemetery":"History of the cemetery",
             "contact":"Contact",
-            "gravesFound":"{0} graves found"
+            "gravesFound":"{0} graves found",
+            "welcomeMessage":"Welcome to the site of the cemetery in Czeladź",
+            "search":"Search",
+            "reset":"Reset"
+        
         }
     }
 ]

@@ -22,7 +22,7 @@
 		<!-- Header -->
 		<header id="header" class="alt">
 			<button type="button" id='language' onclick='changeLanguage()' app-lang="buttonLanguage"></button>
-			<a href="#findGrave" id='goToSearch' class="button">Find grave</a>
+			<a href="#findGrave" id='goToSearch' class="button" app-lang="findGrave"></a>
 			<nav id="nav">
 				<ul>
 					<li class="special">
@@ -44,7 +44,7 @@
 		<!-- Banner -->
 		<section id="banner">
 			<div class="inner">
-				Witaj na stronie cmentarza w Będzinie
+				<p app-lang="welcomeMessage"></p>
 			</div>
 		</section>
 
@@ -72,8 +72,8 @@
 
 						<div class="col-12">
 							<ul class="actions">
-								<li><button type="submit" class="button primary fit" name="submitButton" disabled>Search</button></li>
-								<li><button type="reset" >Reset</button></li>
+								<li><button type="submit" class="button primary fit" name="submitButton" disabled app-lang="search"></button></li>
+								<li><button type="reset" app-lang="reset"></button></li>
 							</ul>
 						</div>
 					</div>
