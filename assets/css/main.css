@@ -2434,7 +2434,6 @@ input, select, textarea {
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		margin-left: 1em;
 	}
 
 		input[type="submit"]:hover,
@@ -4190,6 +4189,10 @@ tbody tr.graveRow.details:hover{
 
 .cardInformation{
 	min-width: 35%;
+}
+
+.top-button{
+	margin-left: 1em;
 }
 
 @media screen and (max-width: 900px) {
