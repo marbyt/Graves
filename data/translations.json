@@ -15,7 +15,11 @@
             "age": "Wiek",
             "historyCemetery":"Historia cmentarza",
             "contact":"Kontakt",
-            "gravesFound":"Znaleziono {0} grobów"
+            "gravesFound":"Znaleziono {0} grobów",
+            "welcomeMessage":"Witamy na stronie cmentarza w Czeladzi",
+            "search":"Szukaj",
+            "reset":"Wyczyść"
+          
         }
     },
     {
@@ -33,7 +37,11 @@
             "age": "Age",
             "historyCemetery":"History of the cemetery",
             "contact":"Contact",
-            "gravesFound":"{0} graves found"
+            "gravesFound":"{0} graves found",
+            "welcomeMessage":"Welcome to the site of the cemetery in Czeladź",
+            "search":"Search",
+            "reset":"Reset"
+        
         }
     }
 ]
