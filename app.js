@@ -5,6 +5,7 @@ const gravesNumber = document.querySelector('#gravesNumber');
 const results = document.querySelector('#results');
 results.setAttribute('style', 'display:none');
 
+let filteredGraves;
 
 
 let currentLanguage = localStorage.getItem('language');
@@ -79,7 +80,7 @@ function changeTranslations() {
 }
 
 const searchHandler = () => {
-    let filteredGraves;
+   
     if (graves) {
         filteredGraves = graves.filter(grave => {
             if (!grave.Surname) {
@@ -97,7 +98,7 @@ const searchHandler = () => {
             graveRows.innerHTML = '';
             let innerHTML = '';
             filteredGraves.forEach(grave => {
-                const row = `<tr class='graveRow'>
+                const row = `<tr class='graveRow' data-id='${grave.Id}'>
                                 <td>${grave.Surname ? grave.Surname : ''}</td>
                                 <td>${grave.Givenname ? grave.Givenname : ''}</td>
                                 <td>${grave.DateDied ? grave.DateDied : ''}</td>
@@ -165,13 +166,28 @@ graveRows.addEventListener('click', e => {
                     detailRow.classList.remove('details');
                     detailRow.parentNode.removeChild(detailRow.nextElementSibling);
                 }
+                const dataId = currentRow.getAttribute('data-id');
+                const graveData = filteredGraves.find(grave=>grave.Id==dataId);
+
+                console.log(graveData);
                 currentRow.classList.add('details');
+
                 currentRow.insertAdjacentHTML('afterend',
                     `<tr class="graveCardRow">
                         <td colspan="4">
                         <div class="flexWraper">
-                        <img src='https://jri-poland.org/imagedata/JRI-IMG/BEDZIN-CZELADZ/dscn1737.jpg' class='cardPicture'>
-                        <div class="cardInformation"><p>adsfdaf daf adf dasf adsf dsaf</p> </div>
+                        <img src='${graveData.Image}' class='cardPicture'>
+                        <div class="cardInformation">
+                            <h1>${(graveData.Givenname ||'') + ' ' +  (graveData.Surname ||'')}</h1>
+                            <p><span>Hebrew date of death: </span><span>${graveData.HebrewDate ||''}</span></p>
+                            <p><span>Age: </span><span>${graveData.Age ||''}</span></p>
+                            <p><span>Spouse name: </span><span>${graveData.Spouse ||''}</span></p>
+                            <p><span>Father's name: </span><span>${graveData.Father ||''}</span></p>
+                            <p><span>Notes: </span><span>${graveData.Comments ||''}</span></p>
+                            <p><span>Reference: </span><span>${graveData.Reference ||''}</span></p>
+                            <p><span>Row: </span><span>${graveData.Row ||''}</span></p>
+
+                        </div>
                         </div>
                     </td>
                     </tr>`);

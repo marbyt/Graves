@@ -4176,26 +4176,29 @@ tbody tr.graveRow.details:hover{
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 	width: 100%;
 	text-align: center;
-	align-items: center;
+	align-items: flex-start;
 	
 }
 .cardPicture{
-	max-width: 65%;
+	max-width: 60%;
 	height: auto;
 }
 
 .cardInformation{
 	min-width: 35%;
+	display: flex;
+    flex-direction: column;
+    text-align: left;
 }
 
 .top-button{
 	margin-left: 1em;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
 	.cardPicture{
 		max-width: 100%;
 		height: auto;
@@ -4203,6 +4206,8 @@ tbody tr.graveRow.details:hover{
 	
 	.cardInformation{
 		min-width: 100%;
+		margin-top: 15px;
+		position: relative;
 	}
 
 	#goToSearch {
