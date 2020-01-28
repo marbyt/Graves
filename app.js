@@ -1,10 +1,11 @@
-
 const elements = document.querySelectorAll("[app-lang]");
 const graveForm = document.querySelector('.grave-form');
 const graveRows = document.querySelector('#graveRows');
-
+const gravesNumber = document.querySelector('#gravesNumber');
 const results = document.querySelector('#results');
 results.setAttribute('style', 'display:none');
+
+let filteredGraves;
 
 
 let currentLanguage = localStorage.getItem('language');
@@ -12,15 +13,23 @@ if (!currentLanguage) {
     currentLanguage = "PL";
 }
 
+let lastNumberFound = 0;
+
+const setGravesNumberText = number => {
+    let text = GetTextById('gravesFound');
+    text = text.replace('{0}', number);
+    gravesNumber.textContent = text;
+}
+
 const getTranslations = async () => {
-    const response = await fetch('/data/translations.json');
+    const response = await fetch('./data/translations.json');
     const data = await response.json();
     return data;
 
 };
 
 const getGraves = async () => {
-    const response = await fetch('/data/graves.json');
+    const response = await fetch('./data/graves.json');
     const data = await response.json();
     return data;
 };
@@ -44,14 +53,20 @@ function changeLanguage() {
     changeTranslations();
 }
 
+function GetTextById(textId) {
+    const text = texts.find(
+        lang => lang.lang === currentLanguage
+    ).translations[textId];
+
+    return text;
+}
+
 function changeTranslations() {
 
     let textId;
     elements.forEach(item => {
         textId = item.getAttribute("app-lang");
-        const text = texts.find(
-            lang => lang.lang === currentLanguage
-        ).translations[textId];
+        const text = GetTextById(textId);
 
         if (item.nodeName === 'INPUT') {
             item.setAttribute("placeholder", text);
@@ -60,12 +75,12 @@ function changeTranslations() {
         }
 
     });
+
+    setGravesNumberText(lastNumberFound);
 }
 
-
-graveForm.addEventListener('submit', e => {
-    e.preventDefault();
-    let filteredGraves;
+const searchHandler = () => {
+   
     if (graves) {
         filteredGraves = graves.filter(grave => {
             if (!grave.Surname) {
@@ -75,20 +90,39 @@ graveForm.addEventListener('submit', e => {
                 grave.Givenname = '';
             }
 
-            const result = grave.Surname.toLowerCase().includes(graveForm.lastName.value.toLowerCase()) && grave.Givenname.toLowerCase().includes(graveForm.firstName.value.toLowerCase());
+            const result = grave.Surname.toLowerCase().indexOf(graveForm.lastName.value.toLowerCase()) > -1 && grave.Givenname.toLowerCase().indexOf(graveForm.firstName.value.toLowerCase()) > -1;
             return result;
-
         });
 
         if (filteredGraves) {
             graveRows.innerHTML = '';
+            let innerHTML = '';
             filteredGraves.forEach(grave => {
-                const row = `<tr class='graveRow'><td>${grave.Surname}</td><td>${grave.Givenname}</td><td>${grave.DateDied}</td><td>${grave.age}</td></tr>`;
-                graveRows.innerHTML += row;
+                const row = `<tr class='graveRow' data-id='${grave.Id}'>
+                                <td>${grave.Surname ? grave.Surname : ''}</td>
+                                <td>${grave.Givenname ? grave.Givenname : ''}</td>
+                                <td>${grave.DateDied ? grave.DateDied : ''}</td>
+                                <td class="bigscreen">${grave.age ? grave.age : ''}</td></tr>`;
+                innerHTML += row;
             });
+            graveRows.innerHTML = innerHTML;
         };
     }
+
+    const number = filteredGraves ? filteredGraves.length : 0;
+    setGravesNumberText(number);
+    lastNumberFound = number;
+
     results.setAttribute('style', 'display:block');
+    results.scrollIntoView();
+
+}
+
+graveForm.addEventListener('submit', e => {
+    e.preventDefault();
+    graveForm.submitButton.disabled = true;
+    searchHandler();
+
 });
 
 const isFormEmpty = () => {
@@ -99,7 +133,13 @@ const isFormEmpty = () => {
 
 graveForm.addEventListener('keyup', e => {
     graveForm.submitButton.disabled = isFormEmpty();
+});
 
+graveForm.addEventListener('paste', e => {
+    let paste = (e.clipboardData || window.clipboardData).getData('text');
+    if(paste){
+        graveForm.submitButton.disabled =false;
+    }
 });
 
 graveForm.addEventListener('reset', e => {
@@ -126,14 +166,31 @@ graveRows.addEventListener('click', e => {
                     detailRow.classList.remove('details');
                     detailRow.parentNode.removeChild(detailRow.nextElementSibling);
                 }
+                const dataId = currentRow.getAttribute('data-id');
+                const graveData = filteredGraves.find(grave=>grave.Id==dataId);
+
+                console.log(graveData);
                 currentRow.classList.add('details');
+
                 currentRow.insertAdjacentHTML('afterend',
                     `<tr class="graveCardRow">
-                <td colspan="5">
-                        <h2>Arcue ut vel commodo</h2>
-                        <p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
-                </td>
-            </tr>`);
+                        <td colspan="4">
+                        <div class="flexWraper">
+                        <img src='${graveData.Image}' class='cardPicture'>
+                        <div class="cardInformation">
+                            <h1>${(graveData.Givenname ||'') + ' ' +  (graveData.Surname ||'')}</h1>
+                            <p><span>Hebrew date of death: </span><span>${graveData.HebrewDate ||''}</span></p>
+                            <p><span>Age: </span><span>${graveData.Age ||''}</span></p>
+                            <p><span>Spouse name: </span><span>${graveData.Spouse ||''}</span></p>
+                            <p><span>Father's name: </span><span>${graveData.Father ||''}</span></p>
+                            <p><span>Notes: </span><span>${graveData.Comments ||''}</span></p>
+                            <p><span>Reference: </span><span>${graveData.Reference ||''}</span></p>
+                            <p><span>Row: </span><span>${graveData.Row ||''}</span></p>
+
+                        </div>
+                        </div>
+                    </td>
+                    </tr>`);
 
             }
         }

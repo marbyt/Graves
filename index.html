@@ -21,8 +21,8 @@
 	<div id="page-wrapper">
 		<!-- Header -->
 		<header id="header" class="alt">
-			<button type="button" id='language' onclick='changeLanguage()' app-lang="buttonLanguage"></button>
-			<a href="#findGrave" id='goToSearch' class="button">Find grave</a>
+			<button type="button" id='language' class="button top-button" onclick='changeLanguage()' app-lang="buttonLanguage"></button>
+			<a href="#findGrave" id='goToSearch' class="button top-button" app-lang="findGrave"></a>
 			<nav id="nav">
 				<ul>
 					<li class="special">
@@ -44,7 +44,7 @@
 		<!-- Banner -->
 		<section id="banner">
 			<div class="inner">
-				Witaj na stronie cmentarza w Będzinie
+				<p app-lang="welcomeMessage"></p>
 			</div>
 		</section>
 
@@ -72,8 +72,8 @@
 
 						<div class="col-12">
 							<ul class="actions">
-								<li><button type="submit" class="button primary fit" name="submitButton" disabled>Search</button></li>
-								<li><button type="reset" >Reset</button></li>
+								<li><button type="submit" class="button primary fit" name="submitButton" disabled app-lang="search"></button></li>
+								<li><button type="reset" app-lang="reset"></button></li>
 							</ul>
 						</div>
 					</div>
@@ -81,7 +81,7 @@
 			</div>
 		</section>
 		<section id="results" class="wrapper style5 special">
-			<h4>Results</h4>
+			<h4 id="gravesNumber"></h4>
 			<div class="table-wrapper">
 
 				<table>
@@ -90,7 +90,7 @@
 							<th app-lang="lastName"></th>
 							<th app-lang="names"></th>
 							<th app-lang="dateOfDeath"></th>
-							<th app-lang="age"></th>
+							<th app-lang="age" class="bigscreen"></th>
 						</tr>
 					</thead>
 					<tbody id="graveRows">
@@ -316,7 +316,6 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-	<script src="partials.js"></script>
 	<script src="app.js"></script>
 
 

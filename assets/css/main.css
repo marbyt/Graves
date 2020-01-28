@@ -2434,7 +2434,6 @@ input, select, textarea {
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
-		margin-left: 1em;
 	}
 
 		input[type="submit"]:hover,
@@ -4010,6 +4009,8 @@ input, select, textarea {
 		background-color: #1d242a;
 	}
 
+	/*App styles*/
+
 	html{
 		scroll-behavior: smooth;
 	}
@@ -4131,7 +4132,7 @@ input, select, textarea {
 
 
 	  .graveCard{
-		  background:green;
+		  background:#21b2a6;
 		  width: 100%;
 	  }
 tbody tr{
@@ -4142,24 +4143,81 @@ tbody tr.graveRow:hover{
 		
 }
 tbody tr.graveRow.details{
-	background: #2e3842;
-	border-color: #2e3842;
+	background: #21b2a6;
+	border-color: #21b2a6;
 	color: #fff;
+	border: solid 0px #21b2a6;
 
 }
 
 
 tbody tr.graveRow.details:hover{
-	background: #2e3842;
-	border-color: #2e3842;
+	background: #21b2a6;
+	border-color: #21b2a6;
 	color: #fff;
 
 }
 
 .graveCardRow{
-	background: lightgreen;
+	background: #21b2a6;
 	border-top-style: none;
 }
 
+@media screen and (max-width: 736px) {
+	.bigscreen{
+		display: none;
+	}
+}
 
+
+
+.flexWraper{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	text-align: center;
+	align-items: flex-start;
+	
+}
+.cardPicture{
+	max-width: 60%;
+	height: auto;
+}
+
+.cardInformation{
+	min-width: 35%;
+	display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.top-button{
+	margin-left: 1em;
+}
+
+@media screen and (max-width: 1000px) {
+	.cardPicture{
+		max-width: 100%;
+		height: auto;
+	}
+	
+	.cardInformation{
+		min-width: 100%;
+		margin-top: 15px;
+		position: relative;
+	}
+
+	#goToSearch {
+		position: absolute;
+	    top: 2px;
+		right: inherit;
+		background-color:red;
+		opacity: 0.8;
+
+	}
+
+}
 
