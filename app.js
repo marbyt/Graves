@@ -102,7 +102,7 @@ const searchHandler = () => {
                                 <td>${grave.Surname ? grave.Surname : ''}</td>
                                 <td>${grave.Givenname ? grave.Givenname : ''}</td>
                                 <td>${grave.DateDied ? grave.DateDied : ''}</td>
-                                <td class="bigscreen">${grave.age ? grave.age : ''}</td></tr>`;
+                                <td class="bigscreen">${grave.Age ? grave.Age : ''}</td></tr>`;
                 innerHTML += row;
             });
             graveRows.innerHTML = innerHTML;
@@ -179,7 +179,7 @@ graveRows.addEventListener('click', e => {
                         <img src='${graveData.Image}' class='cardPicture'>
                         <div class="cardInformation">
                             <h1>${(graveData.Givenname ||'') + ' ' +  (graveData.Surname ||'')}</h1>
-                            <p><span>Hebrew date of death: </span><span>${graveData.HebrewDate ||''}</span></p>
+                            <p><span class='cardLabel'>Hebrew date of death: </span><span>${graveData.HebrewDate ||''}</span></p>
                             <p><span>Age: </span><span>${graveData.Age ||''}</span></p>
                             <p><span>Spouse name: </span><span>${graveData.Spouse ||''}</span></p>
                             <p><span>Father's name: </span><span>${graveData.Father ||''}</span></p>

@@ -4198,6 +4198,11 @@ tbody tr.graveRow.details:hover{
 	margin-left: 1em;
 }
 
+.cardLabel{
+	color: white !important;
+	text-transform: uppercase !important;
+}
+
 @media screen and (max-width: 1000px) {
 	.cardPicture{
 		max-width: 100%;
