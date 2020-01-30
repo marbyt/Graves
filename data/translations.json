@@ -18,7 +18,8 @@
             "gravesFound":"Znaleziono {0} grobów",
             "welcomeMessage":"Witamy na stronie cmentarza żydowskiego w Czeladzi",
             "search":"Szukaj",
-            "reset":"Wyczyść"
+            "reset":"Wyczyść",
+            "yearOfDeath": "Rok śmierci"
           
         }
     },
@@ -40,7 +41,8 @@
             "gravesFound":"{0} graves found",
             "welcomeMessage":"Welcome to the site of the Jewish cemetery in Czeladź",
             "search":"Search",
-            "reset":"Reset"
+            "reset":"Reset",
+            "yearOfDeath": "Year of death"
         
         }
     }
