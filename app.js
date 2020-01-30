@@ -4,6 +4,7 @@ const graveRows = document.querySelector('#graveRows');
 const gravesNumber = document.querySelector('#gravesNumber');
 const results = document.querySelector('#results');
 results.setAttribute('style', 'display:none');
+const pictureHTTP = 'https://jri-poland.org/imagedata/JRI-IMG/BEDZIN-CZELADZ/';
 
 let filteredGraves;
 
@@ -29,7 +30,7 @@ const getTranslations = async () => {
 };
 
 const getGraves = async () => {
-    const response = await fetch('./data/graves.json');
+    const response = await fetch('./data/graves2.json');
     const data = await response.json();
     return data;
 };
@@ -101,7 +102,7 @@ const searchHandler = () => {
                 const row = `<tr class='graveRow' data-id='${grave.Id}'>
                                 <td>${grave.Surname ? grave.Surname : ''}</td>
                                 <td>${grave.Givenname ? grave.Givenname : ''}</td>
-                                <td>${grave.DateDied ? grave.DateDied : ''}</td>
+                                <td>${(grave.Year || '')+ (grave.YearTo ?' - '+grave.YearTo : '')}</td>
                                 <td class="bigscreen">${grave.Age ? grave.Age : ''}</td></tr>`;
                 innerHTML += row;
             });
@@ -176,7 +177,7 @@ graveRows.addEventListener('click', e => {
                     `<tr class="graveCardRow">
                         <td colspan="4">
                         <div class="flexWraper">
-                        <img src='${graveData.Image}' class='cardPicture'>
+                        <img src='${pictureHTTP + graveData.Image}' class='cardPicture'>
                         <div class="cardInformation">
                             <h1>${(graveData.Givenname ||'') + ' ' +  (graveData.Surname ||'')}</h1>
                             <p><span class='cardLabel'>Hebrew date of death: </span><span>${graveData.HebrewDate ||''}</span></p>
