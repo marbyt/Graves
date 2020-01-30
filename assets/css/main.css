@@ -4223,7 +4223,29 @@ tbody tr.graveRow.details:hover{
 		background-color:red;
 		opacity: 0.8;
 
-	}
-
+	}	
 }
+
+
+
+.bigMap{
+	display: block;
+}
+
+.smallMap{
+	display: none;
+}
+
+@media screen and (max-width: 500px) {
+	
+
+.bigMap{
+	display: none;
+}
+
+.smallMap{
+	display: block;
+}
+}
+
 
