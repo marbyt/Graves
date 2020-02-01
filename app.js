@@ -30,7 +30,7 @@ const getTranslations = async () => {
 };
 
 const getGraves = async () => {
-    const response = await fetch('./data/graves2.json');
+    const response = await fetch('./data/graves3.json');
     const data = await response.json();
     return data;
 };
@@ -81,7 +81,7 @@ function changeTranslations() {
 }
 
 const searchHandler = () => {
-   
+
     if (graves) {
         filteredGraves = graves.filter(grave => {
             if (!grave.Surname) {
@@ -91,7 +91,28 @@ const searchHandler = () => {
                 grave.Givenname = '';
             }
 
-            const result = grave.Surname.toLowerCase().indexOf(graveForm.lastName.value.toLowerCase()) > -1 && grave.Givenname.toLowerCase().indexOf(graveForm.firstName.value.toLowerCase()) > -1;
+            let result = grave.Surname.toLowerCase().indexOf(graveForm.lastName.value.toLowerCase()) > -1 && grave.Givenname.toLowerCase().indexOf(graveForm.firstName.value.toLowerCase()) > -1;
+
+            if (graveForm.deathYearFrom.value) {
+                let yearFromSearch = grave.Year >= graveForm.deathYearFrom.value;
+                if(grave.YearTo){
+                    yearFromSearch = yearFromSearch || grave.YearTo >= graveForm.deathYearFrom.value
+                }
+                result = result & yearFromSearch;
+            }
+
+            if (graveForm.deathYearTo.value) {
+                let yearToSearch = grave.Year <= graveForm.deathYearTo.value;
+                if(grave.YearTo){
+                    yearToSearch = yearToSearch || grave.YearTo  <= graveForm.deathYearTo.value;
+                }
+
+
+                result = result & yearToSearch;
+            }
+
+
+
             return result;
         });
 
@@ -102,7 +123,7 @@ const searchHandler = () => {
                 const row = `<tr class='graveRow' data-id='${grave.Id}'>
                                 <td>${grave.Surname ? grave.Surname : ''}</td>
                                 <td>${grave.Givenname ? grave.Givenname : ''}</td>
-                                <td>${(grave.Year || '')+ (grave.YearTo ?' - '+grave.YearTo : '')}</td>
+                                <td>${(grave.Year || '') + (grave.YearTo ? ' - ' + grave.YearTo : '')}</td>
                                 <td class="bigscreen">${grave.Age ? grave.Age : ''}</td></tr>`;
                 innerHTML += row;
             });
@@ -132,16 +153,18 @@ const isFormEmpty = () => {
 }
 
 
-graveForm.addEventListener('keyup', e => {
-    graveForm.submitButton.disabled = isFormEmpty();
+graveForm.addEventListener('input', e => {
+    graveForm.submitButton.disabled = isFormEmpty() || !graveForm.checkValidity();
+  
+
 });
 
-graveForm.addEventListener('paste', e => {
-    let paste = (e.clipboardData || window.clipboardData).getData('text');
-    if(paste){
-        graveForm.submitButton.disabled =false;
-    }
-});
+// graveForm.addEventListener('paste', e => {
+//     let paste = (e.clipboardData || window.clipboardData).getData('text');
+//     if (paste) {
+//         graveForm.submitButton.disabled = false;
+//     }
+// });
 
 graveForm.addEventListener('reset', e => {
     graveForm.submitButton.disabled = true;
@@ -149,6 +172,38 @@ graveForm.addEventListener('reset', e => {
     results.setAttribute('style', 'display:none');
 
 });
+
+const getPiece = (label, information) => {
+    const data = `<p><span class='cardLabel'>${label} </span><span>${information || ''}</span></p>`
+    return data;
+}
+
+const getCardHtml = graveData => {
+    const startHtml = `<tr class="graveCardRow">
+    <td colspan="4">
+    <div class="flexWraper">
+    <img src='${pictureHTTP + graveData.Image}' class='cardPicture'>
+    <div class="cardInformation">
+        <h1>${(graveData.Givenname || '') + ' ' + (graveData.Surname || '')}</h1>`
+
+    let dataHtml = '';
+    if (graveData.HebrewDate) {
+        dataHtml += getPiece('Hebrew date of death:', graveData.HebrewDate);
+    }
+    dataHtml += `<p><span>Age: </span><span>${graveData.Age || ''}</span></p>
+        <p><span>Spouse name: </span><span>${graveData.Spouse || ''}</span></p>
+        <p><span>Father's name: </span><span>${graveData.Father || ''}</span></p>
+        <p><span>Notes: </span><span>${graveData.Comments || ''}</span></p>
+        <p><span>Reference: </span><span>${graveData.Reference || ''}</span></p>
+        <p><span>Row: </span><span>${graveData.Row || ''}</span></p>`;
+    const endHtml = `
+    </div>
+    </div>
+    </td>
+    </tr>`;
+    const cardHtml = startHtml + dataHtml + endHtml;
+    return cardHtml;
+}
 
 
 graveRows.addEventListener('click', e => {
@@ -160,7 +215,6 @@ graveRows.addEventListener('click', e => {
             currentRow.parentNode.removeChild(currentRow.nextElementSibling);
 
         } else {
-
             if (!currentRow.classList.contains('details') && !currentRow.classList.contains('graveCardRow')) {
                 const detailRow = document.querySelector('.details');
                 if (detailRow) {
@@ -168,41 +222,11 @@ graveRows.addEventListener('click', e => {
                     detailRow.parentNode.removeChild(detailRow.nextElementSibling);
                 }
                 const dataId = currentRow.getAttribute('data-id');
-                const graveData = filteredGraves.find(grave=>grave.Id==dataId);
+                const graveData = filteredGraves.find(grave => grave.Id == dataId);
 
-                console.log(graveData);
                 currentRow.classList.add('details');
-
-                currentRow.insertAdjacentHTML('afterend',
-                    `<tr class="graveCardRow">
-                        <td colspan="4">
-                        <div class="flexWraper">
-                        <img src='${pictureHTTP + graveData.Image}' class='cardPicture'>
-                        <div class="cardInformation">
-                            <h1>${(graveData.Givenname ||'') + ' ' +  (graveData.Surname ||'')}</h1>
-                            <p><span class='cardLabel'>Hebrew date of death: </span><span>${graveData.HebrewDate ||''}</span></p>
-                            <p><span>Age: </span><span>${graveData.Age ||''}</span></p>
-                            <p><span>Spouse name: </span><span>${graveData.Spouse ||''}</span></p>
-                            <p><span>Father's name: </span><span>${graveData.Father ||''}</span></p>
-                            <p><span>Notes: </span><span>${graveData.Comments ||''}</span></p>
-                            <p><span>Reference: </span><span>${graveData.Reference ||''}</span></p>
-                            <p><span>Row: </span><span>${graveData.Row ||''}</span></p>
-
-                        </div>
-                        </div>
-                    </td>
-                    </tr>`);
-
+                currentRow.insertAdjacentHTML('afterend', getCardHtml(graveData));
             }
         }
     }
-    // let details = document.createElement("tr");
-    //details.innerHTML+="<div> jest ejst jest </div>";
-
-    //graveRows.insertBefore(e.target.parentElement.nextElementSibling, details);
-
-
 });
-
-
-//Array.from(graveForm.elements).filter(x=>x.type==='text').foreach
