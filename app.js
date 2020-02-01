@@ -1,4 +1,4 @@
-const elements = document.querySelectorAll("[app-lang]");
+
 const graveForm = document.querySelector('.grave-form');
 const graveRows = document.querySelector('#graveRows');
 const gravesNumber = document.querySelector('#gravesNumber');
@@ -62,10 +62,15 @@ function GetTextById(textId) {
     return text;
 }
 
-function changeTranslations() {
+function changeTranslations(){
+    const elementsToTranslate = document.querySelectorAll("[app-lang]");
+    changeTranslationsForElements(elementsToTranslate); 
+}
 
+function changeTranslationsForElements(elementsToTranslate) {
+   
     let textId;
-    elements.forEach(item => {
+    elementsToTranslate.forEach(item => {
         textId = item.getAttribute("app-lang");
         const text = GetTextById(textId);
 
@@ -95,7 +100,7 @@ const searchHandler = () => {
 
             if (graveForm.deathYearFrom.value) {
                 let yearFromSearch = grave.Year >= graveForm.deathYearFrom.value;
-                if(grave.YearTo){
+                if (grave.YearTo) {
                     yearFromSearch = yearFromSearch || grave.YearTo >= graveForm.deathYearFrom.value
                 }
                 result = result & yearFromSearch;
@@ -103,8 +108,8 @@ const searchHandler = () => {
 
             if (graveForm.deathYearTo.value) {
                 let yearToSearch = grave.Year <= graveForm.deathYearTo.value;
-                if(grave.YearTo){
-                    yearToSearch = yearToSearch || grave.YearTo  <= graveForm.deathYearTo.value;
+                if (grave.YearTo) {
+                    yearToSearch = yearToSearch || grave.YearTo <= graveForm.deathYearTo.value;
                 }
 
 
@@ -155,7 +160,7 @@ const isFormEmpty = () => {
 
 graveForm.addEventListener('input', e => {
     graveForm.submitButton.disabled = isFormEmpty() || !graveForm.checkValidity();
-  
+
 
 });
 
@@ -174,9 +179,20 @@ graveForm.addEventListener('reset', e => {
 });
 
 const getPiece = (label, information) => {
-    const data = `<p><span class='cardLabel'>${label} </span><span>${information || ''}</span></p>`
+    const data = `<p><span class='cardLabel' app-lang='${label}'></span><span>${information || ''}</span></p>`
     return data;
 }
+
+const fieldToDisplay = [
+    { label: "dateOfDeath", information: "DateDied" },
+    { label: "hebrewDate", information: "HebrewDate" },
+    { label: "age", information: "Age" },
+    { label: "spouseName", information: "Spouse" },
+    { label: "fatherName", information: "Father" },
+    { label: "notes", information: "Comments" },
+    { label: "reference", information: "Reference" },
+    { label: "row", information: "Row" }
+]
 
 const getCardHtml = graveData => {
     const startHtml = `<tr class="graveCardRow">
@@ -187,15 +203,13 @@ const getCardHtml = graveData => {
         <h1>${(graveData.Givenname || '') + ' ' + (graveData.Surname || '')}</h1>`
 
     let dataHtml = '';
-    if (graveData.HebrewDate) {
-        dataHtml += getPiece('Hebrew date of death:', graveData.HebrewDate);
-    }
-    dataHtml += `<p><span>Age: </span><span>${graveData.Age || ''}</span></p>
-        <p><span>Spouse name: </span><span>${graveData.Spouse || ''}</span></p>
-        <p><span>Father's name: </span><span>${graveData.Father || ''}</span></p>
-        <p><span>Notes: </span><span>${graveData.Comments || ''}</span></p>
-        <p><span>Reference: </span><span>${graveData.Reference || ''}</span></p>
-        <p><span>Row: </span><span>${graveData.Row || ''}</span></p>`;
+    fieldToDisplay.forEach(field => {
+        if (graveData[field.information]) {
+            dataHtml += getPiece(field.label, graveData[field.information]);
+        }
+
+    });
+
     const endHtml = `
     </div>
     </div>
@@ -226,6 +240,9 @@ graveRows.addEventListener('click', e => {
 
                 currentRow.classList.add('details');
                 currentRow.insertAdjacentHTML('afterend', getCardHtml(graveData));
+
+                
+                changeTranslationsForElements(currentRow.nextElementSibling.querySelectorAll("[app-lang]"));
             }
         }
     }

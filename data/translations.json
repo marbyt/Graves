@@ -19,8 +19,13 @@
             "welcomeMessage":"Witamy na stronie cmentarza żydowskiego w Czeladzi",
             "search":"Szukaj",
             "reset":"Wyczyść",
-            "yearOfDeath": "Rok śmierci"
-          
+            "yearOfDeath": "Rok śmierci",
+            "hebrewDate" : "Żydowska data śmierci",
+            "spouseName" :"Imię męża/żony",
+            "fatherName" :"Imię ojca",
+            "notes" :"Uwagi",
+            "reference" :"Nr referencyjny",
+            "row":"Rząd"
         }
     },
     {
@@ -42,8 +47,15 @@
             "welcomeMessage":"Welcome to the site of the Jewish cemetery in Czeladź",
             "search":"Search",
             "reset":"Reset",
-            "yearOfDeath": "Year of death"
-        
+            "yearOfDeath": "Year of death",
+            "hebrewDate" : "Hebrew date of death",
+            "spouseName" :"Spouse's name",
+            "fatherName" :"Father's name",
+            "notes" :"Notes",
+            "reference" :"Reference",
+            "row":"Row"
         }
     }
 ]
+
+
