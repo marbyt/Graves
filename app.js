@@ -91,7 +91,28 @@ const searchHandler = () => {
                 grave.Givenname = '';
             }
 
-            const result = grave.Surname.toLowerCase().indexOf(graveForm.lastName.value.toLowerCase()) > -1 && grave.Givenname.toLowerCase().indexOf(graveForm.firstName.value.toLowerCase()) > -1;
+            let result = grave.Surname.toLowerCase().indexOf(graveForm.lastName.value.toLowerCase()) > -1 && grave.Givenname.toLowerCase().indexOf(graveForm.firstName.value.toLowerCase()) > -1;
+
+            if (graveForm.deathYearFrom.value) {
+                let yearFromSearch = grave.Year >= graveForm.deathYearFrom.value;
+                if(grave.YearTo){
+                    yearFromSearch = yearFromSearch || grave.YearTo >= graveForm.deathYearFrom.value
+                }
+                result = result & yearFromSearch;
+            }
+
+            if (graveForm.deathYearTo.value) {
+                let yearToSearch = grave.Year <= graveForm.deathYearTo.value;
+                if(grave.YearTo){
+                    yearToSearch = yearToSearch || grave.YearTo  <= graveForm.deathYearTo.value;
+                }
+
+
+                result = result & yearToSearch;
+            }
+
+
+
             return result;
         });
 
@@ -132,16 +153,18 @@ const isFormEmpty = () => {
 }
 
 
-graveForm.addEventListener('keyup', e => {
-    graveForm.submitButton.disabled = isFormEmpty();
+graveForm.addEventListener('input', e => {
+    graveForm.submitButton.disabled = isFormEmpty() || !graveForm.checkValidity();
+  
+
 });
 
-graveForm.addEventListener('paste', e => {
-    let paste = (e.clipboardData || window.clipboardData).getData('text');
-    if (paste) {
-        graveForm.submitButton.disabled = false;
-    }
-});
+// graveForm.addEventListener('paste', e => {
+//     let paste = (e.clipboardData || window.clipboardData).getData('text');
+//     if (paste) {
+//         graveForm.submitButton.disabled = false;
+//     }
+// });
 
 graveForm.addEventListener('reset', e => {
     graveForm.submitButton.disabled = true;
@@ -150,7 +173,7 @@ graveForm.addEventListener('reset', e => {
 
 });
 
-const getPiece = (label, information)=>{
+const getPiece = (label, information) => {
     const data = `<p><span class='cardLabel'>${label} </span><span>${information || ''}</span></p>`
     return data;
 }
@@ -163,11 +186,11 @@ const getCardHtml = graveData => {
     <div class="cardInformation">
         <h1>${(graveData.Givenname || '') + ' ' + (graveData.Surname || '')}</h1>`
 
-    let dataHtml ='';
-       if(graveData.HebrewDate){
-           dataHtml+=getPiece('Hebrew date of death:',graveData.HebrewDate);
-       }
-       dataHtml+=`<p><span>Age: </span><span>${graveData.Age || ''}</span></p>
+    let dataHtml = '';
+    if (graveData.HebrewDate) {
+        dataHtml += getPiece('Hebrew date of death:', graveData.HebrewDate);
+    }
+    dataHtml += `<p><span>Age: </span><span>${graveData.Age || ''}</span></p>
         <p><span>Spouse name: </span><span>${graveData.Spouse || ''}</span></p>
         <p><span>Father's name: </span><span>${graveData.Father || ''}</span></p>
         <p><span>Notes: </span><span>${graveData.Comments || ''}</span></p>

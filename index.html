@@ -21,7 +21,8 @@
 	<div id="page-wrapper">
 		<!-- Header -->
 		<header id="header" class="alt">
-			<button type="button" id='language' class="button top-button" onclick='changeLanguage()' app-lang="buttonLanguage"></button>
+			<button type="button" id='language' class="button top-button" onclick='changeLanguage()'
+				app-lang="buttonLanguage"></button>
 			<a href="#findGrave" id='goToSearch' class="button top-button" app-lang="findGrave"></a>
 			<nav id="nav">
 				<ul>
@@ -55,29 +56,31 @@
 					<div class="row gtr-uniform">
 
 						<div class="col-6 col-12-small">
-							<input type="text" name="firstName" id="first-name" value="" app-lang="firstName"/>
+							<input type="text" name="firstName" id="first-name" value="" app-lang="firstName" />
 						</div>
 						<div class="col-6 col-12-small">
 							<input type="text" name="lastName" id="last-name" value="" app-lang="lastName" />
 						</div>
 
 						<div class="col-6 col-12-small">
-							<input type="text" name="deathYearFrom" id="death-year-from" value=""
+							<input type="text" name="deathYearFrom" id="death-year-from" value="" minlength="4" maxlength="4" pattern="[0-9]{4}"
 								app-lang="deathYearFrom" />
 						</div>
 						<div class="col-6 col-12-small">
-							<input type="text" name="deathYearTo" id="death-year-to" value="" app-lang="deathYearTo" />
+							<input type="text" name="deathYearTo" id="death-year-to" value="" app-lang="deathYearTo" minlength="4" maxlength="4" pattern="[0-9]{4}"/>
 						</div>
 
 
 						<div class="col-12">
 							<ul class="actions">
-								<li><button type="submit" class="button primary fit" name="submitButton" disabled app-lang="search"></button></li>
+								<li><button type="submit" class="button primary fit" name="submitButton" disabled
+										app-lang="search"></button></li>
 								<li><button type="reset" app-lang="reset"></button></li>
 							</ul>
 						</div>
 					</div>
 				</form>
+
 			</div>
 		</section>
 		<section id="results" class="wrapper style5 special">
@@ -94,156 +97,14 @@
 						</tr>
 					</thead>
 					<tbody id="graveRows">
-						
+
 					</tbody>
-					<!-- <tfoot>
-							<tr>
-								<td colspan="2"></td>
-								<td>100.00</td>
-							</tr>
-						</tfoot> -->
 				</table>
 			</div>
 		</section>
 
-		<!-- <div class="limiter">
-				<div class="container-table100">
-					<div class="wrap-table100">
-						<div class="table">
-							<div class="row header">
-								<div class="cell">
-									Full Name
-								</div>
-								<div class="cell">
-									Age
-								</div>
-								<div class="cell">
-									Job Title
-								</div>
-								<div class="cell">
-									Location
-								</div>
-							</div>
-							<div class="row">
-								<div class="cell" data-title="Full Name">
-									Vincent Williamson
-								</div>
-								<div class="cell" data-title="Age">
-									31
-								</div>
-								<div class="cell" data-title="Job Title">
-									iOS Developer
-								</div>
-								<div class="cell" data-title="Location">
-									Washington
-								</div>
-							</div>
-							<div class="row">
-								<div class="cell" data-title="Full Name">
-									Joseph Smith
-								</div>
-								<div class="cell" data-title="Age">
-									27
-								</div>
-								<div class="cell" data-title="Job Title">
-									Project Manager
-								</div>
-								<div class="cell" data-title="Location">
-									Somerville, MA
-								</div>
-							</div>
-							<div class="row">
-								<div class="cell" data-title="Full Name">
-									Justin Black
-								</div>
-								<div class="cell" data-title="Age">
-									26
-								</div>
-								<div class="cell" data-title="Job Title">
-									Front-End Developer
-								</div>
-								<div class="cell" data-title="Location">
-									Los Angeles
-								</div>
-							</div>
-							<div class="row">
-								<div class="cell" data-title="Full Name">
-									Sean Guzman
-								</div>
-								<div class="cell" data-title="Age">
-									25
-								</div>
-								<div class="cell" data-title="Job Title">
-									Web Designer
-								</div>
-								<div class="cell" data-title="Location">
-									San Francisco
-								</div>
-							</div>
-							<div class="row">
-								<div class="cell" data-title="Full Name">
-									Keith Carter
-								</div>
-								<div class="cell" data-title="Age">
-									20
-								</div>
-								<div class="cell" data-title="Job Title">
-									Graphic Designer
-								</div>
-								<div class="cell" data-title="Location">
-									New York, NY
-								</div>
-							</div>
-							<div class="row">
-								<div class="cell" data-title="Full Name">
-									Austin Medina
-								</div>
-								<div class="cell" data-title="Age">
-									32
-								</div>
-								<div class="cell" data-title="Job Title">
-									Photographer
-								</div>
-								<div class="cell" data-title="Location">
-									New York
-								</div>
-							</div>
-							<div class="row">
-								<div class="cell" data-title="Full Name">
-									Vincent Williamson
-								</div>
-								<div class="cell" data-title="Age">
-									31
-								</div>
-								<div class="cell" data-title="Job Title">
-									iOS Developer
-								</div>
-								<div class="cell" data-title="Location">
-									Washington
-								</div>
-							</div>
-							<div class="row">
-								<div class="cell" data-title="Full Name">
-									Joseph Smith
-								</div>
-								<div class="cell" data-title="Age">
-									27
-								</div>
-								<div class="cell" data-title="Job Title">
-									Project Manager
-								</div>
-								<div class="cell" data-title="Location">
-									Somerville, MA
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div> -->
 
-		</section>
-
-		<!-- Two -->
+		<!-- History -->
 		<section id="history" class="wrapper alt style3">
 			<section class="spotlight">
 				<div class="image"><img src="images/pic01.jpg" alt="" />
@@ -284,11 +145,15 @@
 					<h2>Arcue ut vel commodo</h2>
 					<p>Aliquam ut ex ut augue consectetur interdum endrerit imperdiet amet eleifend fringilla.</p>
 					<div class="bigMap">
-						<iframe class="test" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2547.437536397719!2d19.096828815759817!3d50.32108780455864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716d0efcf3a8b2f%3A0x6db64c5a07145ea8!2sCmentarz%20%C5%BCydowski!5e0!3m2!1spl!2spl!4v1580408458778!5m2!1spl!2spl" width="450px" height ="450px"frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+						<iframe class="test"
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2547.437536397719!2d19.096828815759817!3d50.32108780455864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716d0efcf3a8b2f%3A0x6db64c5a07145ea8!2sCmentarz%20%C5%BCydowski!5e0!3m2!1spl!2spl!4v1580408458778!5m2!1spl!2spl"
+							width="450px" height="450px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 					</div>
 
 					<div class="smallMap">
-						<iframe class="test" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2547.437536397719!2d19.096828815759817!3d50.32108780455864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716d0efcf3a8b2f%3A0x6db64c5a07145ea8!2sCmentarz%20%C5%BCydowski!5e0!3m2!1spl!2spl!4v1580408458778!5m2!1spl!2spl" width="250px" height ="250px"frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+						<iframe class="test"
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2547.437536397719!2d19.096828815759817!3d50.32108780455864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716d0efcf3a8b2f%3A0x6db64c5a07145ea8!2sCmentarz%20%C5%BCydowski!5e0!3m2!1spl!2spl!4v1580408458778!5m2!1spl!2spl"
+							width="250px" height="250px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
 					</div>
 				</header>
 			</div>
