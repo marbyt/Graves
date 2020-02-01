@@ -4020,10 +4020,6 @@ input, select, textarea {
 		right: 10px;
 		opacity: 0.5;
 		background-color: red;
-		/* opacity: 0.7;
-		border: solid 2px white;
-		padding: 5px 5px; */
-;
 	}
 
 
@@ -4138,6 +4134,9 @@ input, select, textarea {
 tbody tr{
 	cursor:pointer;
 }
+tbody .graveCardRow{
+	cursor:default;
+}
 tbody tr.graveRow:hover{
 	background: lightgrey;
 		
@@ -4204,11 +4203,16 @@ tbody tr.graveRow.details:hover{
 	text-transform: uppercase !important;
 }
 
+.cardLabel::after{
+	content: ": ";
+}
+
 @media screen and (max-width: 1000px) {
 	.cardPicture{
 		max-width: 100%;
 		height: auto;
 	}
+	
 	
 	.cardInformation{
 		min-width: 100%;
@@ -4222,10 +4226,8 @@ tbody tr.graveRow.details:hover{
 		right: inherit;
 		background-color:red;
 		opacity: 0.8;
-
 	}	
 }
-
 
 
 .bigMap{
@@ -4238,14 +4240,13 @@ tbody tr.graveRow.details:hover{
 
 @media screen and (max-width: 500px) {
 	
+	.bigMap{
+		display: none;
+	}
 
-.bigMap{
-	display: none;
-}
-
-.smallMap{
-	display: block;
-}
+	.smallMap{
+		display: block;
+	}
 }
 
 
