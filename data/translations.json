@@ -25,7 +25,13 @@
             "fatherName" :"Imię ojca",
             "notes" :"Uwagi",
             "reference" :"Nr referencyjny",
-            "row":"Rząd"
+            "row":"Rząd",
+            "contactPar1": "Cmentarz żydowski w Czeladzi ul. Będzińska 66, 41-250 Czeladź (w pobliżu centrum handlowego M1)",
+            "contactPar2": "Cmentarz znajduje się pod opieką Muzeum „Saturn” w Czeladzi i jest utrzymywany ze środków miasta Czeladź. Informacje dotyczące zwiedzania z przewodnikiem                  oraz opieki nad grobami: Tel.: 32 265 42 98 (Muzeum „Saturn”)",
+            "contactPar3": "Cmentarz jest ogrodzony i zamykany. Klucz do bramy znajduje się w budynku przycmentarnym nr 66. tel.: 516 300 169"
+
+
+
         }
     },
     {
@@ -53,7 +59,10 @@
             "fatherName" :"Father's name",
             "notes" :"Notes",
             "reference" :"Reference",
-            "row":"Row"
+            "row":"Row",
+            "contactPar1": "Jewish cemetery in Czeladz ul. Będzińska 66 41-250 Czeladź (near the M1 shopping center)",
+            "contactPar2": "The cemetery is under care of the „Saturn” Museum in Czeladź and it is maintained by the city of Czeladź. Detailed information on sightseeing and caring                   for graves: Tel .: 32 265 42 98 („Saturn” Museum)",
+            "contactPar3": "The cemetery is fenced and closed. The key to the gate is at the house no. 66., near to the cemetery entrance. Tel .: + 48 516 300 169"
         }
     }
 ]
