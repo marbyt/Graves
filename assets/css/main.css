@@ -4249,4 +4249,43 @@ tbody tr.graveRow.details:hover{
 	}
 }
 
+.mapWrapper {
+	max-width: 50%;
+	height: auto;
+
+}
+@media screen and (max-width: 1000px){
+	.mapWrapper {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+.contactWrapper {
+    min-width: 50%;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+@media screen and (max-width: 1000px){
+.contactWrapper {
+    min-width: 100%;
+    margin-top: 15px;
+	position: relative;
+}
+.flexContactWrapper{
+	flex-direction: column-reverse;
+	align-items: center;
+}
+}
+
+.contactWrapper p{
+	text-align: justify;
+}
+	
+
+
+
 
