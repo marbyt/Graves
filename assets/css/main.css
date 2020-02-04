@@ -4191,7 +4191,8 @@ tbody tr.graveRow.details:hover{
 	max-width: 35%;
 	display: flex;
     flex-direction: column;
-    text-align: left;
+	text-align: left;
+	letter-spacing: 0.225em;
 }
 
 .top-button{
@@ -4283,6 +4284,16 @@ tbody tr.graveRow.details:hover{
 
 .contactWrapper p{
 	text-align: justify;
+}
+
+.graveLocation{
+	font-size: x-large; 
+     font-weight: bold;
+}
+
+
+.cardInformation h1 {
+	font-size: x-large;
 }
 	
 
