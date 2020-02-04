@@ -26,10 +26,16 @@
             "notes" :"Uwagi",
             "reference" :"Nr referencyjny",
             "row":"Rząd",
-            "contactPar1": "Cmentarz żydowski w Czeladzi ul. Będzińska 66, 41-250 Czeladź (w pobliżu centrum handlowego M1)",
-            "contactPar2": "Cmentarz znajduje się pod opieką Muzeum „Saturn” w Czeladzi i jest utrzymywany ze środków miasta Czeladź. Informacje dotyczące zwiedzania z przewodnikiem                  oraz opieki nad grobami: Tel.: 32 265 42 98 (Muzeum „Saturn”)",
-            "contactPar3": "Cmentarz jest ogrodzony i zamykany. Klucz do bramy znajduje się w budynku przycmentarnym nr 66. tel.: 516 300 169"
-
+            "contactPar1": "CMENTARZ ŻYDOWSKI W CZELADZI",
+            "contactPar2": "ul. Będzińska 66, 41-250 Czeladź (w pobliżu centrum handlowego M1)",
+            "contactPar3": "Cmentarz znajduje się pod opieką Muzeum „Saturn” w Czeladzi i jest utrzymywany ze środków miasta Czeladź. Informacje dotyczące zwiedzania z przewodnikiem                  oraz opieki nad grobami: Tel.: 32 265 42 98 (Muzeum „Saturn”)",
+            "contactPar4": "Cmentarz jest ogrodzony i zamykany. Klucz do bramy znajduje się w budynku przycmentarnym nr 66. tel.: 516 300 169",
+            "historyTitle1": "HISTORIA CMENTARZA",
+            "historyTitle2": "CZAS HOLOKAUSTU I DEWASTACJI",
+            "historyTitle3": "ODNOWA I OPIEKA",
+            "historyPar1": "Przez wiele lat Żydzi z Czeladzi podlegali gminie wyznaniowej w Będzinie i właśnie tam chowali swych zmarłych. Na początku XX w., kiedy nastąpił znaczny wzrost żydowskiej społeczności w Czeladzi, podjęto starania o utworzenie odrębnej gminy. W końcu gmina żydowska w Czeladzi powstała w czasie I wojny światowej. Nowo powstała organizacja stanęła przed koniecznością założenia własnego cmentarza, tym bardziej, że cmentarz w Będzinie przy ul. Sieleckiej stopniowo się zapełniał. Władze obu gmin podjęły decyzję o lokalizacji wspólnego miejsca pochówku na granicy obu miast. Nowy cmentarz powstał w 1916 r., przy ul. Będzińskiej 64, w pobliżu dzisiejszego centrum handlowego M1). O takim położeniu przesądziły niskie ceny gruntu. W latach 30. XX w. powiększono teren nekropolii.",
+            "historyPar2": "Podczas II wojny światowej w tylnej części cmentarza pochowano ciała około 100 Żydów spalonych przez Niemców w synagodze w Będzinie. Później pochowano tutaj także ciała ok. 400 Żydów zamordowanych w sierpniu 1943 r. w czasie akcji likwidacji getta w Czeladzi. Sam cmentarz podczas wojny nie został jednak poważnie zdewastowany przez Niemców i przetrwał do wyzwolenia w dość dobrym stanie. Ostatni znany pochówek odbył się w marcu 1948 r. (pochowany Dawid Siwek). W powojennych latach doszło do kilkunastu przypadków dewastacji cmentarza. Okoliczna ludność rozkradła też część nagrobków, wykorzystując je najczęściej w celach budowlanych.",
+            "historyPar3": "W 1988 r., dzięki finansowemu wsparciu pochodzącego z Czeladzi Mońka Stawskiego (mieszkającego po wojnie w Niemczech), przeprowadzono prace porządkowe. W 2003 r. przeprowadzono inwentaryzację cmentarza. W pracach tych uczestniczyli Jeffrey Cymbler, a także Mojżesz Lenzky, rabin Szlomo Englard, Krzysztof Adamiec, Ada Holtzman, Connie Newman i Orna Niederman. Ich praca została uwieńczona w 2007 r. wydaniem książki pt. Cmentarz gmin żydowskich Będzina i Czeladzi. Poza historią cmentarza można znaleźć w niej także spis nagrobków."
 
 
         }
@@ -60,9 +66,17 @@
             "notes" :"Notes",
             "reference" :"Reference",
             "row":"Row",
-            "contactPar1": "Jewish cemetery in Czeladz ul. Będzińska 66 41-250 Czeladź (near the M1 shopping center)",
-            "contactPar2": "The cemetery is under care of the „Saturn” Museum in Czeladź and it is maintained by the city of Czeladź. Detailed information on sightseeing and caring                   for graves: Tel .: 32 265 42 98 („Saturn” Museum)",
-            "contactPar3": "The cemetery is fenced and closed. The key to the gate is at the house no. 66., near to the cemetery entrance. Tel .: + 48 516 300 169"
+            "contactPar1": "JEWISH CEMETERY IN CZELADŹ",
+            "contactPar2": "ul. Będzińska 66 41-250 Czeladź (near the M1 shopping center)",
+            "contactPar3": "The cemetery is under care of the „Saturn” Museum in Czeladź and it is maintained by the city of Czeladź. Detailed information on sightseeing and caring                   for graves: Tel .: 32 265 42 98 („Saturn” Museum)",
+            "contactPar4": "The cemetery is fenced and closed. The key to the gate is at the house no. 66., near to the cemetery entrance. Tel .: + 48 516 300 169",
+            "historyTitle1": "HISTORY OF THE CEMETERY",
+            "historyTitle2": "TIME OF HOLOCAUST AND DEVASTATION",
+            "historyTitle3": "RENOVATION AND CARETAKING",
+            "historyPar1": "The Jewish cemetery in Czeladź (64 Będzińska St.) was somewhere in 1915. mainly because the prizes of land plots were low in Czeladź. It was used by both Będzin and Czeladź Jews. In the 1930s, the necropolis was enlarged. About three thousand tombstones have been left in the area of 1.6 ha. A division into separate burial plots for men and women is noticeable. The dead from Czeladź were buried in the front section of the cemetery, while the dead from Będzin were buried in the back. At the entrance, there is a damaged ohel of rabbi Cwi Hanoch ha-Kohen Lewin, whose ashes were sent to Israel after the war.",
+            "historyPar2": "During World War II, the bodies of about 100 Jews burned by the Germans in the synagogue in Będzin were buried in the back of the cemetery. Later, the bodies of about 400 Jews murdered in August 1943 during the liquidation of the ghetto in Czeladź were also buried here. The cemetery itself during the war, however, was not seriously devastated by the Germans and survived until liberation in fairly good condition. The last known burial took place in March 1948 (Dawid Siwek buried). In the post-war years there were several cases of devastation of the cemetery. The surrounding population also stole some of the tombstones, using them mostly for construction purposes.",
+            "historyPar3": "In 1988, thanks to the financial support of Mozes Stawski, who came from Czeladz (who lived in Germany after the war), cleaning works were carried out. In 2003, an inventory of the cemetery was carried out. Jeffrey Cymbler, as well as Mojżesz Lenzky, rabbi Szlomo Englard, Krzysztof Adamiec, Ada Holtzman, Connie Newman and Orna Niederman participated in these works. Their work was crowned in 2007 with the publication of the book Cemetery of the Jewish communities of Będzin and Czeladz. In addition to the history of the cemetery, you can also find a list of tombstones."
+
         }
     }
 ]
