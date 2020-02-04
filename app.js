@@ -62,13 +62,26 @@ function GetTextById(textId) {
     return text;
 }
 
-function changeTranslations(){
+function changeTranslations() {
     const elementsToTranslate = document.querySelectorAll("[app-lang]");
-    changeTranslationsForElements(elementsToTranslate); 
+    changeTranslationsForElements(elementsToTranslate);
+    changeTranslationsForAppData();
+}
+
+function changeTranslationsForAppData(){
+    const elementsToTranslate = document.querySelectorAll("[app-data]");
+    elementsToTranslate.forEach(item => {
+        const data = item.getAttribute("app-data");
+        const textId = data.substring(data.length - 1).toLowerCase();
+        const text = GetTextById(textId);
+        const dataToDisplay = data.replace(textId.toUpperCase(), ' ' + text);
+        item.textContent = dataToDisplay;
+    });
+  
 }
 
 function changeTranslationsForElements(elementsToTranslate) {
-   
+
     let textId;
     elementsToTranslate.forEach(item => {
         textId = item.getAttribute("app-lang");
@@ -171,6 +184,8 @@ graveForm.addEventListener('input', e => {
 //     }
 // });
 
+
+
 graveForm.addEventListener('reset', e => {
     graveForm.submitButton.disabled = true;
     graveRows.innerHTML = '';
@@ -178,7 +193,7 @@ graveForm.addEventListener('reset', e => {
 
 });
 
-const getPiece = (label, information) => {
+const getPiece = (label, information, layout) => {
     const data = `<p><span class='cardLabel' app-lang='${label}'></span><span>${information || ''}</span></p>`
     return data;
 }
@@ -190,8 +205,8 @@ const fieldToDisplay = [
     { label: "spouseName", information: "Spouse" },
     { label: "fatherName", information: "Father" },
     { label: "notes", information: "Comments" },
-    { label: "reference", information: "Reference" },
-    { label: "row", information: "Row" }
+    { label: "reference", information: "Reference" }
+    //  { label: "row", information: "Row", layout:"graveLocation" }
 ]
 
 const getCardHtml = graveData => {
@@ -205,19 +220,26 @@ const getCardHtml = graveData => {
     let dataHtml = '';
     fieldToDisplay.forEach(field => {
         if (graveData[field.information]) {
-            dataHtml += getPiece(field.label, graveData[field.information]);
+            dataHtml += getPiece(field.label, graveData[field.information], field.layout);
         }
 
     });
 
+    const textId = graveData.Row.substring(graveData.Row.length - 1).toLowerCase();
+    const text = GetTextById(textId);
+    const dataToDisplay = graveData.Row.replace(textId.toUpperCase(), ' ' + text);
+    const row = `<p class='graveLocation'><span class='cardLabel' app-lang='row' ></span><span app-data="${graveData.Row}">${dataToDisplay}</span></p>`
+    dataHtml += row;
     const endHtml = `
     </div>
-    </div>
+    </div>  
     </td>
     </tr>`;
     const cardHtml = startHtml + dataHtml + endHtml;
     return cardHtml;
 }
+
+
 
 
 graveRows.addEventListener('click', e => {
@@ -241,7 +263,7 @@ graveRows.addEventListener('click', e => {
                 currentRow.classList.add('details');
                 currentRow.insertAdjacentHTML('afterend', getCardHtml(graveData));
 
-                
+
                 changeTranslationsForElements(currentRow.nextElementSibling.querySelectorAll("[app-lang]"));
             }
         }
