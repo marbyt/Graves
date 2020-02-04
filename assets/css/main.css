@@ -4295,6 +4295,10 @@ tbody tr.graveRow.details:hover{
 .cardInformation h1 {
 	font-size: x-large;
 }
+
+#history p{
+	text-align: justify;
+}
 	
 
 
