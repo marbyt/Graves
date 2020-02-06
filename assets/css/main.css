@@ -1859,7 +1859,7 @@ input, select, textarea {
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			box-shadow: 0 0 0 2px #21b2a6;
+			box-shadow: 0 0 0 2px #339fc1;
 		}
 
 	select {
@@ -1956,7 +1956,7 @@ input, select, textarea {
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			box-shadow: 0 0 0 2px #21b2a6;
+			box-shadow: 0 0 0 2px #339fc1;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2819,7 +2819,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style1 {
-			background-color: #21b2a6;
+			background-color: #928c72;
 			color: #c8ece9;
 		}
 
@@ -2873,7 +2873,7 @@ input, select, textarea {
 
 				.wrapper.style1 select option {
 					color: #ffffff;
-					background: #21b2a6;
+					background: #928c72;
 				}
 
 			.wrapper.style1 input[type="checkbox"] + label,
@@ -2889,7 +2889,7 @@ input, select, textarea {
 			.wrapper.style1 input[type="checkbox"]:checked + label:before,
 			.wrapper.style1 input[type="radio"]:checked + label:before {
 				background: #ffffff;
-				color: #21b2a6;
+				color: #928c72;
 			}
 
 			.wrapper.style1 ::-webkit-input-placeholder {
@@ -2982,7 +2982,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style3 {
-			background-color: #505393;
+			background-color: #0a4455;
 			color: #d3d4e4;
 		}
 
@@ -3052,7 +3052,7 @@ input, select, textarea {
 			.wrapper.style3 input[type="checkbox"]:checked + label:before,
 			.wrapper.style3 input[type="radio"]:checked + label:before {
 				background: #ffffff;
-				color: #505393;
+				color: #928c72;
 			}
 
 			.wrapper.style3 ::-webkit-input-placeholder {
@@ -3353,7 +3353,7 @@ input, select, textarea {
 		-ms-transition: -ms-transform 0.5s ease;
 		transition: transform 0.5s ease;
 		-webkit-overflow-scrolling: touch;
-		background: #21b2a6;
+		background: #339fc1;
 		color: #ffffff;
 		height: 100%;
 		max-width: 80%;
@@ -4128,7 +4128,7 @@ input, select, textarea {
 
 
 	  .graveCard{
-		  background:#21b2a6;
+		  background:#928c72;
 		  width: 100%;
 	  }
 tbody tr{
@@ -4142,23 +4142,23 @@ tbody tr.graveRow:hover{
 		
 }
 tbody tr.graveRow.details{
-	background: #21b2a6;
-	border-color: #21b2a6;
+	background: #928c72;
+	border-color: #928c72;
 	color: #fff;
-	border: solid 0px #21b2a6;
+	border: solid 0px #928c72;
 
 }
 
 
 tbody tr.graveRow.details:hover{
-	background: #21b2a6;
-	border-color: #21b2a6;
+	background: #928c72;
+	border-color: #928c72;
 	color: #fff;
 
 }
 
 .graveCardRow{
-	background: #21b2a6;
+	background: #928c72;
 	border-top-style: none;
 }
 
