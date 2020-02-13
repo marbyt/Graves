@@ -4299,7 +4299,9 @@ tbody tr.graveRow.details:hover{
 #history p{
 	text-align: justify;
 }
-	
+#results{
+	min-height: 100vh;
+}
 
 
 
