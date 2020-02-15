@@ -4303,6 +4303,13 @@ tbody tr.graveRow.details:hover{
 	min-height: 100vh;
 }
 
+.arrow::after{
+	content: "\2193";
+}
+
+.arrow.active::after{
+	content: "\2191";
+}
 
 
 
