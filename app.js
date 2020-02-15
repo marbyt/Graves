@@ -139,6 +139,7 @@ const searchHandler = () => {
             let innerHTML = '';
             filteredGraves.forEach(grave => {
                 const row = `<tr class='graveRow' data-id='${grave.Id}'>
+                              <td class="arrow"></td>
                                 <td>${grave.Surname ? grave.Surname : ''}</td>
                                 <td>${grave.Givenname ? grave.Givenname : ''}</td>
                                 <td>${(grave.Year || '') + (grave.YearTo ? ' - ' + grave.YearTo : '')}</td>
@@ -211,7 +212,7 @@ const fieldToDisplay = [
 
 const getCardHtml = graveData => {
     const startHtml = `<tr class="graveCardRow">
-    <td colspan="4">
+    <td colspan="5">
     <div class="flexWraper">
     <img src='${pictureHTTP + graveData.Image}' class='cardPicture'>
     <div class="cardInformation">
@@ -249,6 +250,7 @@ graveRows.addEventListener('click', e => {
         if (currentRow.classList.contains('details')) {
             currentRow.classList.remove('details');
             currentRow.parentNode.removeChild(currentRow.nextElementSibling);
+            currentRow.firstElementChild.classList.remove('active');
 
         } else {
             if (!currentRow.classList.contains('details') && !currentRow.classList.contains('graveCardRow')) {
@@ -256,11 +258,14 @@ graveRows.addEventListener('click', e => {
                 if (detailRow) {
                     detailRow.classList.remove('details');
                     detailRow.parentNode.removeChild(detailRow.nextElementSibling);
+                    detailRow.firstElementChild.classList.remove('active');
                 }
                 const dataId = currentRow.getAttribute('data-id');
                 const graveData = filteredGraves.find(grave => grave.Id == dataId);
 
                 currentRow.classList.add('details');
+                currentRow.firstElementChild.classList.add('active');
+
                 currentRow.insertAdjacentHTML('afterend', getCardHtml(graveData));
 
 
