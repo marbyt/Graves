@@ -54,6 +54,48 @@ function changeLanguage() {
     changeTranslations();
 }
 
+
+function getFuzzyFactor(text1, text2) {
+    let fuzzyFactor = 0;
+    if (text1 && text2) {
+        const score1 = getScore(text1, text2);
+        const score2 = getScore(text2, text1);
+        const w1 = text1.length || 0;
+        const w2 = text2.length || 0;
+        fuzzyFactor = (w1 * score1 + w2 * score2) / (w1 + w2);
+    }
+    return fuzzyFactor;
+}
+
+
+
+function getScore(text1, text2) {
+    let score = 0;
+    if (text1 && text2) {
+        score = 0;
+
+        const input = text1.toLowerCase();
+        const comparedText = text2.toLowerCase();
+
+        let comparedPosition = 0;
+        for (let index = 0; index < input.length; index++) {
+            const letter = input[index];
+            for (let position = comparedPosition; position < comparedText.length; position++) {
+                const element = comparedText[position];
+                if (element === letter) {
+                    comparedPosition = position + 1;
+                    score++;
+                    break;
+                }
+            }
+        }
+        console.log(score);
+        score = score / input.length;
+    }
+
+    return score;
+}
+
 function GetTextById(textId) {
     const text = texts.find(
         lang => lang.lang === currentLanguage
@@ -68,7 +110,7 @@ function changeTranslations() {
     changeTranslationsForAppData();
 }
 
-function changeTranslationsForAppData(){
+function changeTranslationsForAppData() {
     const elementsToTranslate = document.querySelectorAll("[app-data]");
     elementsToTranslate.forEach(item => {
         const data = item.getAttribute("app-data");
@@ -77,7 +119,7 @@ function changeTranslationsForAppData(){
         const dataToDisplay = data.replace(textId.toUpperCase(), ' ' + text);
         item.textContent = dataToDisplay;
     });
-  
+
 }
 
 function changeTranslationsForElements(elementsToTranslate) {
@@ -99,7 +141,7 @@ function changeTranslationsForElements(elementsToTranslate) {
 }
 
 const searchHandler = () => {
-
+    const fuzzyNumber = 0.7;
     if (graves) {
         filteredGraves = graves.filter(grave => {
             if (!grave.Surname) {
@@ -109,7 +151,11 @@ const searchHandler = () => {
                 grave.Givenname = '';
             }
 
-            let result = grave.Surname.toLowerCase().indexOf(graveForm.lastName.value.toLowerCase()) > -1 && grave.Givenname.toLowerCase().indexOf(graveForm.firstName.value.toLowerCase()) > -1;
+            let result = (grave.Surname.toLowerCase().indexOf(graveForm.lastName.value.toLowerCase()) > -1 || getFuzzyFactor(graveForm.lastName.value, grave.Surname) > fuzzyNumber)
+                && (grave.Givenname.toLowerCase().indexOf(graveForm.firstName.value.toLowerCase()) > -1 || getFuzzyFactor(graveForm.firstName.value, grave.Givenname) > fuzzyNumber);
+
+            // let result = (grave.Surname.toLowerCase().indexOf(graveForm.lastName.value.toLowerCase()) > -1 || compareText(graveForm.lastName.value, grave.Surname, 2))
+            //     && (grave.Givenname.toLowerCase().indexOf(graveForm.firstName.value.toLowerCase()) > -1 || compareText(graveForm.firstName.value, grave.Givenname, 2));
 
             if (graveForm.deathYearFrom.value) {
                 let yearFromSearch = grave.Year >= graveForm.deathYearFrom.value;
