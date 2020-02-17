@@ -1859,7 +1859,7 @@ input, select, textarea {
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			box-shadow: 0 0 0 2px #21b2a6;
+			box-shadow: 0 0 0 2px #339fc1;
 		}
 
 	select {
@@ -1956,7 +1956,7 @@ input, select, textarea {
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			box-shadow: 0 0 0 2px #21b2a6;
+			box-shadow: 0 0 0 2px #339fc1;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2183,12 +2183,14 @@ input, select, textarea {
 		display: flex;
 		cursor: default;
 		list-style: none;
-		margin-left: -1em;
+		margin-left: -2em;
 		padding-left: 0;
+		justify-content: center;
+	
 	}
 
 		ul.actions li {
-			padding: 0 0 0 1em;
+			padding: 0 0 0 2em;
 			vertical-align: middle;
 		}
 
@@ -2347,9 +2349,9 @@ input, select, textarea {
 			border-right: 0;
 		}
 
-			table tbody tr:nth-child(2n + 1) {
+			/* table tbody tr:nth-child(2n + 1) {
 				background-color: rgba(144, 144, 144, 0.25);
-			}
+			} */
 
 		table td {
 			padding: 0.75em 0.75em;
@@ -2360,7 +2362,7 @@ input, select, textarea {
 			font-size: 0.9em;
 			font-weight: 600;
 			padding: 0 0.75em 0.75em 0.75em;
-			text-align: left;
+			text-align: center;
 		}
 
 		table thead {
@@ -2817,7 +2819,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style1 {
-			background-color: #21b2a6;
+			background-color: #928c72;
 			color: #c8ece9;
 		}
 
@@ -2871,7 +2873,7 @@ input, select, textarea {
 
 				.wrapper.style1 select option {
 					color: #ffffff;
-					background: #21b2a6;
+					background: #928c72;
 				}
 
 			.wrapper.style1 input[type="checkbox"] + label,
@@ -2887,7 +2889,7 @@ input, select, textarea {
 			.wrapper.style1 input[type="checkbox"]:checked + label:before,
 			.wrapper.style1 input[type="radio"]:checked + label:before {
 				background: #ffffff;
-				color: #21b2a6;
+				color: #928c72;
 			}
 
 			.wrapper.style1 ::-webkit-input-placeholder {
@@ -2980,7 +2982,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style3 {
-			background-color: #505393;
+			background-color: #0a4455;
 			color: #d3d4e4;
 		}
 
@@ -3050,7 +3052,7 @@ input, select, textarea {
 			.wrapper.style3 input[type="checkbox"]:checked + label:before,
 			.wrapper.style3 input[type="radio"]:checked + label:before {
 				background: #ffffff;
-				color: #505393;
+				color: #928c72;
 			}
 
 			.wrapper.style3 ::-webkit-input-placeholder {
@@ -3248,9 +3250,9 @@ input, select, textarea {
 				border-color: #dfdfdf;
 			}
 
-				.wrapper.style5 table tbody tr:nth-child(2n + 1) {
+				/* .wrapper.style5 table tbody tr:nth-child(2n + 1) {
 					background-color: rgba(0, 0, 0, 0.0375);
-				}
+				} */
 
 			.wrapper.style5 table th {
 				color: #2E3842;
@@ -3351,7 +3353,7 @@ input, select, textarea {
 		-ms-transition: -ms-transform 0.5s ease;
 		transition: transform 0.5s ease;
 		-webkit-overflow-scrolling: touch;
-		background: #21b2a6;
+		background: #339fc1;
 		color: #ffffff;
 		height: 100%;
 		max-width: 80%;
@@ -3983,8 +3985,7 @@ input, select, textarea {
 		background: none;
 	}
 
-	body.is-mobile.landing #banner,
-	body.is-mobile.landing .wrapper.style4 {
+	body.is-mobile.landing #banner {
 		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
 		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
@@ -3994,6 +3995,321 @@ input, select, textarea {
 		background-size: cover;
 	}
 
+	body.is-mobile.landing .wrapper.style4 {
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner4.jpg");
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner4.jpg");
+		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner4.jpg");
+		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner4.jpg");
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
+
+	/*App styles*/
+
+	html{
+		scroll-behavior: smooth;
+	}
+	#goToSearch {
+		position: fixed;
+		bottom: 10px;
+		right: 10px;
+		opacity: 0.5;
+		background-color: red;
+	}
+
+
+	#results{
+		display:none;
+	}
+	/* #goToSearch {
+		background-image: url(images/magnifier.png);
+		position: fixed;
+		bottom: 0px;
+		right: 0px; 
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+		
+		width: 90px;
+		height: 90px;
+		opacity: 0.7;
+		border-style:none;
+	}
+ */
+
+	/* @media screen and (max-width: 1680px) {
+
+		#goToSearch{
+			
+			width: 80px;
+			height: 80px;
+		}
+
+	}
+
+	@media screen and (max-width: 1280px) {
+
+		#goToSearch{
+			
+			width: 70px;
+			height: 70px;
+		}
+
+	}
+
+	@media screen and (max-width: 736px) {
+
+		#goToSearch{
+			
+			width: 60px;
+			height: 60px;
+		}
+
+	} */
+	/* table{
+		border-collapse:collapse;
+		width:100%;
+	  }
+	  
+	  .blue{
+		border:2px solid #1ABC9C;
+	  }
+	  
+	  .blue thead{
+		background:#1ABC9C;
+	  }
+	  
+	  .purple{
+		border:2px solid #9B59B6;
+	  }
+	  
+	  .purple thead{
+		background:#9B59B6;
+	  }
+	  
+	  thead{
+		color:white;
+	  }
+	  
+	  th,td{
+		text-align:center;
+		padding:5px 0;
+	  }
+	  
+	  tbody tr:nth-child(even){
+		background:#ECF0F1;
+	  }
+	  
+	  tbody tr:hover{
+	  background:#BDC3C7;
+		color:#FFFFFF;
+	  }
+	  
+	  .fixed{
+		top:0;
+		position:fixed;
+		width:auto;
+		display:none;
+		border:none;
+	  }
+	  
+	  .scrollMore{
+		margin-top:600px;
+	  }
+	  
+	  .up{
+		cursor:pointer;
+	  } */
+
+
+	  .graveCard{
+		  background:#928c72;
+		  width: 100%;
+	  }
+tbody tr{
+	cursor:pointer;
+}
+tbody .graveCardRow{
+	cursor:default;
+}
+tbody tr.graveRow:hover{
+	background: lightgrey;
+		
+}
+tbody tr.graveRow.details{
+	background: #928c72;
+	border-color: #928c72;
+	color: #fff;
+	border: solid 0px #928c72;
+
+}
+
+
+tbody tr.graveRow.details:hover{
+	background: #928c72;
+	border-color: #928c72;
+	color: #fff;
+
+}
+
+.graveCardRow{
+	background: #928c72;
+	border-top-style: none;
+}
+
+@media screen and (max-width: 736px) {
+	.bigscreen{
+		display: none;
+	}
+}
+
+
+
+.flexWraper{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	text-align: center;
+	align-items: flex-start;
+	
+}
+.cardPicture{
+	max-width: 60%;
+	height: auto;
+}
+
+.cardInformation{
+	min-width: 35%;
+	max-width: 35%;
+	display: flex;
+    flex-direction: column;
+	text-align: left;
+	letter-spacing: 0.225em;
+}
+
+.top-button{
+	margin-left: 1em;
+}
+
+.cardLabel{
+	color: white !important;
+	text-transform: uppercase !important;
+}
+
+.cardLabel::after{
+	content: ": ";
+}
+
+@media screen and (max-width: 1000px) {
+	.cardPicture{
+		max-width: 100%;
+		height: auto;
+	}
+	
+	
+	.cardInformation{
+		min-width: 100%;
+		margin-top: 15px;
+		position: relative;
+	}
+
+	#goToSearch {
+		position: absolute;
+	    top: 2px;
+		right: inherit;
+		background-color:red;
+		opacity: 0.8;
+	}	
+}
+
+
+.bigMap{
+	display: block;
+}
+
+.smallMap{
+	display: none;
+}
+
+@media screen and (max-width: 500px) {
+	
+	.bigMap{
+		display: none;
+	}
+
+	.smallMap{
+		display: block;
+	}
+}
+
+.mapWrapper {
+	max-width: 50%;
+	height: auto;
+
+}
+@media screen and (max-width: 1000px){
+	.mapWrapper {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+.contactWrapper {
+    min-width: 50%;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+@media screen and (max-width: 1000px){
+.contactWrapper {
+    min-width: 100%;
+    margin-top: 15px;
+	position: relative;
+}
+.flexContactWrapper{
+	flex-direction: column-reverse;
+	align-items: center;
+}
+}
+
+.contactWrapper p{
+	text-align: justify;
+}
+
+.graveLocation{
+	font-size: x-large; 
+     font-weight: bold;
+}
+
+
+.cardInformation h1 {
+	font-size: x-large;
+}
+
+#history p{
+	text-align: justify;
+}
+#results{
+	min-height: 100vh;
+}
+
+.arrow::after{
+	content: "\2193";
+}
+
+.arrow.active::after{
+	content: "\2191";
+}
+
+
+

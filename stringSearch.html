@@ -1,0 +1,79 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>String search</title>
+</head>
+
+<body>
+    <form id="form">
+        <input type="text" placeholder="Text 1" id="text1">
+        <input type="text" placeholder="Text 2" id="text2">
+        <input type="submit" value="Compare" id="compare">
+        <input type="reset" value="Reset" id="reset"></form>
+    <p id="result"></p>
+    </form>
+
+    <script>
+        const form = document.querySelector("#form");
+        const result = document.querySelector("#result");
+
+
+
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+            const text1 = form.text1.value;
+            const text2 = form.text2.value;
+            let score = compareText(text1, text2);
+            result.textContent = `${score}`;
+            console.log(text1, text2);
+
+        });
+
+
+        function compareText(text1, text2) {
+            let score = 1;
+            if (text1 && text2) {
+			     text1 = text1.toLowerCase();
+                text2 = text2.toLowerCase();
+                score=0;
+                let shorter = '';
+                let longer = '';
+
+                if (text1.length <= text2.length) {
+                    shorter = text1;
+                    longer = text2;
+                } else {
+                    shorter = text2;
+                    longer = text1;
+                }
+
+                let longerPosition = 0;
+                for (let index = 0; index < shorter.length; index++) {
+                    const letter = shorter[index];
+                    for (let position = longerPosition; position < longer.length; position++) {
+                        const element = longer[position];
+                        if (element === letter) {
+                            longerPosition = position + 1;
+                            score++;
+                            break;
+                        }
+
+                    }
+
+                }
+                console.log(score);
+                score = score / shorter.length;
+
+
+            }
+
+            return score;
+        }
+
+    </script>
+</body>
+
+</html>
