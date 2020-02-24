@@ -2173,7 +2173,12 @@ input, select, textarea {
 	dl {
 		margin: 0 0 2em 0;
 	}
-
+		ul.calendar {
+			list-style-type: none;
+			margin: 0em;
+			padding: 0em;
+	  		text-align: justify;
+	  }
 /* Actions */
 
 	ul.actions {
