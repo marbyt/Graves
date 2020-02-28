@@ -4318,6 +4318,8 @@ tbody tr.graveRow.details:hover{
 
 .figure{
 	margin-bottom: 30px;
+	text-indent: 10px;
+	font-size: 75%;
 }
 .map-button{
 	box-shadow: inset 0 0 0 2px #fff !important;
