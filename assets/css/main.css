@@ -2173,7 +2173,12 @@ input, select, textarea {
 	dl {
 		margin: 0 0 2em 0;
 	}
-
+		ul.calendar {
+			list-style-type: none;
+			margin: 0em;
+			padding: 0em;
+	  		text-align: justify;
+	  }
 /* Actions */
 
 	ul.actions {
@@ -2490,7 +2495,6 @@ input, select, textarea {
 		button.primary,
 		.button.primary {
 			background-color: #ed4933;
-			box-shadow: none !important;
 			color: #ffffff !important;
 		}
 
@@ -4309,6 +4313,28 @@ tbody tr.graveRow.details:hover{
 
 .arrow.active::after{
 	content: "\2191";
+}
+
+.figure{
+	margin-bottom: 30px;
+	text-indent: 10px;
+	font-size: 75%;
+}
+.border-button{
+	box-shadow: inset 0 0 0 2px #fff !important;
+}
+
+.calendar li {
+	padding-left: 0em;
+}
+
+.spotlight.history{
+	align-items: flex-start;
+	padding-top: 0em;
+}
+
+.history .image{
+	padding-top: 2em;
 }
 
 
