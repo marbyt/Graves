@@ -3534,7 +3534,7 @@ input, select, textarea {
 								width: 2em;
 							}
 
-							@media screen and (max-width: 736px) {
+							@media screen and (max-width: 374px) {
 
 								#header nav > ul > li > a.menuToggle {
 									padding: 0 1.5em;
@@ -3546,7 +3546,7 @@ input, select, textarea {
 
 							}
 
-						@media screen and (max-width: 736px) {
+						@media screen and (max-width: 374px) {
 
 							#header nav > ul > li > a {
 								padding: 0 0 0 1.5em;
@@ -4227,14 +4227,18 @@ tbody tr.graveRow.details:hover{
 
 	#goToSearch {
 		position: absolute;
-	    top: 2px;
+	    top: 5.5px;
 		right: inherit;
 		background-color:red;
 		opacity: 0.8;
 	}	
 }
 
-
+@media screen and ( max-width:736px) {
+	#goToSearch {
+	top: 2px;
+	}
+}
 .bigMap{
 	display: block;
 }
