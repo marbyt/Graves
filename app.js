@@ -4,8 +4,8 @@ const graveRows = document.querySelector('#graveRows');
 const gravesNumber = document.querySelector('#gravesNumber');
 const results = document.querySelector('#results');
 results.setAttribute('style', 'display:none');
-//const pictureHTTP = 'https://jri-poland.org/imagedata/JRI-IMG/BEDZIN-CZELADZ/';
-const pictureHTTP = './graveimages/';
+const pictureHTTP = 'https://jri-poland.org/imagedata/JRI-IMG/BEDZIN-CZELADZ/';
+//const pictureHTTP = './graveimages/';
 let filteredGraves;
 
 
